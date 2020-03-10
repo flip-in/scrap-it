@@ -1,0 +1,9 @@
+<div class="container">
+  <% if @next_pickup %>
+    <h4>Your next pickup is scheduled for:</h4>
+    <h3>@next_pickup</h3>
+  <% else %>
+    <h3>Schedule a pickup</h3>
+    <%= link_to "Book a pickup", new_pickup_path %>
+  <% end %>
+</div>

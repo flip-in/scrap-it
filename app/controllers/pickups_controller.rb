@@ -1,6 +1,6 @@
 class PickupsController < ApplicationController
-  after_action: :authorize_pickups, except: [:index]
-  before_action: :set_pickup, only: [:edit, :review, :update, :destroy]
+  after_action :authorize_pickups, except: [:index]
+  before_action :set_pickup, only: [:edit, :review, :update, :destroy]
   
   def index
     #for the driver
