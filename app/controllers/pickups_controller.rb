@@ -1,7 +1,7 @@
 class PickupsController < ApplicationController
-  after_action: :authorize_pickups, except: [:index]
-  before_action: :set_pickup, only: [:edit, :review, :update, :destroy]
-  
+  after_action :authorize_pickups, except: [:index]
+  before_action :set_pickup, only: [:edit, :review, :update, :destroy]
+
   def index
     #for the driver
     @pickups = policy_scope(Pickup).order(date: :desc)
@@ -11,7 +11,7 @@ class PickupsController < ApplicationController
     #Scheduling page
     @pickup = Pickup.new
   end
-  
+
   def create
     # POST action
     @pickup = Pickup.new(user_pickup_params)
@@ -50,8 +50,8 @@ class PickupsController < ApplicationController
     @pickup.destroy
   end
 
-  private 
-  
+  private
+
   def authorize_pickups
     authorize @pickup
   end
