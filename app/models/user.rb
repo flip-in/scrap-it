@@ -10,3 +10,14 @@ class User < ApplicationRecord
   has_many :badges, through: :user_badges
   has_many :rewards, through: :user_rewards
         end
+
+  after_update :check_badges
+
+
+  private
+
+  def check_badges
+    # TODO write this code.. happens after the driver gives thumbs up or down
+  end
+end
+
