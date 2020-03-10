@@ -1,2 +1,9 @@
 <h1>Pickups#new</h1>
 <p>Find me in app/views/pickups/new.html.erb</p>
+
+<div id='pickup-booking-dates'>
+   <%= simple_form_for([@pickup]) do |f| %>
+       <%= f.input :date, as: :string, type: :text %>
+       <%= f.submit "Book", class: "btn btn-primary" %>
+    <% end %>
+ </div>
