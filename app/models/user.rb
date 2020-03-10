@@ -12,8 +12,6 @@ class User < ApplicationRecord
 
   after_update :check_badges
   validates :address, :first_name, :last_name, :phone_number, presence: true
-  validates :user_name, presence: true, uniqueness: true
-  validates :address, :first_name, :last_name, :phone_number, presence: true, on: :update
 
   private
 
