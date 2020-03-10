@@ -14,8 +14,6 @@ class User < ApplicationRecord
   validates :address, :first_name, :last_name, :phone_number, presence: true
   validates :user_name, presence: true, uniqueness: true
 
-
-
   private
 
   def check_badges
