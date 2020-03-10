@@ -9,8 +9,6 @@ class User < ApplicationRecord
   has_many :categories, through: :user_categories
   has_many :badges, through: :user_badges
   has_many :rewards, through: :user_rewards
-        end
-
   after_update :check_badges
 
 

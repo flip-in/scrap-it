@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'pages/onboarding'
+  get 'pages/home'
+  get 'pages/map'
   devise_for :drivers
   devise_for :users
   root to: 'pages#home'
