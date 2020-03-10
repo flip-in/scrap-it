@@ -11,7 +11,9 @@ class User < ApplicationRecord
   has_many :rewards, through: :user_rewards
 
   after_update :check_badges
-  validates :address, :user_name, presence: true
+  validates :address, :first_name, :last_name, :phone_number, presence: true
+  validates :user_name, presence: true, uniqueness: true
+
 
 
   private
