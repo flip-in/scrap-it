@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-  get 'pages/onboarding'
-  get 'pages/home'
-  get 'pages/map'
+  get 'users/edit'
+  get 'users/update'
   devise_for :drivers
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
   root to: 'pages#home'
-  
+  resources :users, only: [:edit, :update]
   resources :pickups, except: [:show]
   resources :rewards, only: [:index]
-
   get '/onboarding', to: 'pages#onboarding', as: :onboarding
   # ROUTES FOR 2 DASHBOARDS
   get '/dashboard', to: 'dashboards#user_dashboard', as: :user_dashboard
