@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   def skip_pundit? #
     params[:controller] !~ /pickups/
   end
-  
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:address, :user_name])
   end
