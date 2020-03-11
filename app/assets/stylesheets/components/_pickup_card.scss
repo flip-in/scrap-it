@@ -1,0 +1,32 @@
+.feedback {
+  padding: 0 10px;
+  .card-feedback {
+    background-color: rgba(246, 184, 110, 0.48);
+    border: 1px solid #EEEDED;
+    box-sizing: border-box;
+    border-radius: 20px;
+    color: #6A6868;
+    font-size: 12px;
+    padding: 2px 0px;
+
+  }
+}
+
+.card-pickup{
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.09);
+  border: none;
+  height: 72px;
+  margin-bottom: 16px;
+  background: $white;
+  border: 1.5px solid #E5E5E5;
+  border-radius: 5px;
+}
+
+.card-date{
+  width: 20%;
+  align-items: center;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-right: 1px solid $midgrey;
+}
