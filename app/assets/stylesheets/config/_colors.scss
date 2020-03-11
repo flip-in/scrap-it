@@ -2,7 +2,12 @@
 
 // Scrapit colors:
 
-
+// brightblue -- for primary button (inverted for buttons that are white)
+// lightblue --  gradient design, option for color matching if required
+// aqua --  gradient, also used as button color if too much primary color
+// midteal --  h1 headers
+// darkteal --  available for darker fonts
+// nearblack --  driver navbar
 $brightblue: #00DAE9;
 $lightblue: #1CBECE;
 $aqua: #00E5D7;
@@ -10,10 +15,15 @@ $midteal: #00A8B7;
 $darkteal: #008089;
 $nearblack: #022121;
 
-
+//white -- white with a bit of the edge off, background of cards
+// lightgrey -- the base background
+// midgrey -- for h2 "past pickups..."
 $white: #FBFBFB;
 $lightgrey: #F2F1F1;
 $midgrey: #ACAFAF;
+
+//orange --  for whoops/false
+//red --  it's there with no use right now
 
 $orange: #FFC585;
 $red: #FD0F15;

@@ -4,7 +4,7 @@
     <div class="col-md-6 mx-auto">
       <% if @next_pickup %>
         <div class="pickup-card">
-          <h4>Your next pickup is scheduled for:</h4>
+          <p>Your next pickup is scheduled for:<p>
           <h3><%= @next_pickup.date %></h3>
           <h4><%= @next_pickup.time_of_day %></h4>
         </div>
@@ -19,7 +19,7 @@
 
 
   <div class="row">
-    <div class="col-md-6 mx-auto">
+    <div class="col-md-6 mx-auto" id="card-colored">
       <h4>Your Past Pickups:</h4>
       <%= render 'past_pickups' %>
     </div> <!-- COL -->

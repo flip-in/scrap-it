@@ -5,11 +5,18 @@
         <span class="pickup-day"><%= pickup.date.strftime("%e") %></span>
         <span class="pickup-month"><%= pickup.date.strftime("%b").upcase %></span>
       </div>
+      <%# <hr class = "vertical-bar">  %>
       <div class="feedback">
         <%= pickup.feedback %>
       </div>
       <div class="rating">
-        <%= pickup.rating %>
+        <% if pickup.rating %>
+          <%= image_tag 'thumbsup.png', size: '32x32', class: 'rating-badge-sm' %>
+          <span class="rating-points">+25</span>
+        <% else %>
+          <%= image_tag 'thumbsdown.png', size: '32x32', class: 'rating-badge-sm' %>
+          <span class="rating-whoops">whoops</span>
+        <% end %>
       </div>
     </div>
   <% end %>
