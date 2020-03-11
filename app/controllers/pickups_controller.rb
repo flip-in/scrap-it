@@ -15,6 +15,7 @@ class PickupsController < ApplicationController
   def create
     # POST action
     @pickup = Pickup.new(user_pickup_params)
+    @pickup.user = current_user
     @pickup.save
     redirect_to user_dashboard_path
   end
