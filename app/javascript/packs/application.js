@@ -10,7 +10,8 @@ if (dateInput) {
 
 flatpickr(dateInput, {
   minDate: "today",
-  dateFormat: "Y-m-d",
+  dateFormat: "Y-m-d", 
+  inline: true,
 });
 }
 console.log('im in the file')
