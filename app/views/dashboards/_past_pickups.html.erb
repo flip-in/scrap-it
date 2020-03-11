@@ -8,11 +8,13 @@
       <div class="feedback">
         <%= pickup.feedback %>
       </div>
-      <div class="rating">
+      <div class="rating d-flex flex-wrap">
         <% if pickup.rating %>
-          <%= image_tag 'thumbsup.png', class: 'rating-badge-sm' %>
+          <%= image_tag 'thumbsup.png', size: '32x32', class: 'rating-badge-sm' %>
+          <span class="rating-points">+25</span>
         <% else %>
-          <%= image_tag 'thumbsdown.png', class: 'rating-badge-sm' %>
+          <%= image_tag 'thumbsdown.png', size: '32x32', class: 'rating-badge-sm' %>
+          <span class="rating-whoops">whoops</span>
         <% end %>
       </div>
     </div>
