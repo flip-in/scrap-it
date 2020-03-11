@@ -3,8 +3,20 @@
 }
 
 .rating-whoops {
-
+  color: $orange;
 }
+
+.feedback {
+  flex-grow: 2;
+}
+
+.card-feedback {
+  background-color: rgba(246, 184, 110, 0.48);
+  border: 1px solid #EEEDED;
+box-sizing: border-box;
+border-radius: 20px;
+}
+
 
 // .vertical-bar {
 //   height: 100%;
