@@ -9,6 +9,9 @@ class PickupsController < ApplicationController
 
   def new
     #Scheduling page
+    if current_user.address.nil?
+      redirect_to edit_user_path(current_user)
+    end
     @pickup = Pickup.new
   end
 
