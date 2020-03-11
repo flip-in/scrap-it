@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="card row p-2" id="card-colored">
+    <h3>you have <%= @user.points %> points available</h3>
+    <button class="btn" id="btn-white">view rewards here</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="header-box">
+    <h1>search bar</h1>
+  </div>
+
+  <div class="rewards-wrapper">
+    <h3>Your preferred Rewards</h3>
+      <% @user.rewards.each do |rew| %>
+        <div>
+          <hr class="line m-0 pt-2">
+          <p><%= rew.name %></p>
+        </div>
+        <div>
+        <h4 style="font-size: 16px; color: #00A8B7; font-weight: 600;"><%= rew.point_cost %></h4>
+        </div>
+      <% end %>
+      <hr class="line m-0 p-0">
+  </div>
+</div>
+
+
+    <div class="all-rewards m-2">
+      <h3>Other rewards you may be interested in</h3>
+        <% Reward.all.each do |rew| %>
+          <div>
+            <hr class="line m-0 pt-2">
+            <p><%= rew.name %></p>
+          </div>
+          <div>
+            <h4 style="font-size: 16px; color: #00A8B7; font-weight: 600;"><%= rew.point_cost %></h4>
+          </div>
+        <% end %>
+        <hr class="line m-0 pt-2">
+    </div>
+</div>
+
