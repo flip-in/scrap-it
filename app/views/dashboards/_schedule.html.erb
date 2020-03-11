@@ -1,10 +1,29 @@
 <div class="container">
-  <% if @next_pickup %>
-    <h4>Your next pickup is scheduled for:</h4>
-    <h3><%= @next_pickup.date %></h3>
-    <h4><%= @next_pickup.time_of_day %></h4>
-  <% else %>
-    <h3>Schedule a pickup</h3>
-  <% end %>
-  <%= link_to "Book a pickup", new_pickup_path %>
+
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <% if @next_pickup %>
+        <div class="pickup-card">
+          <h4>Your next pickup is scheduled for:</h4>
+          <h3><%= @next_pickup.date %></h3>
+          <h4><%= @next_pickup.time_of_day %></h4>
+        </div>
+      <% else %>
+        <h3>Schedule a pickup</h3>
+      <% end %>
+      <%= link_to "Book a pickup", new_pickup_path %>
+    </div> <!-- COL -->
+  </div> <!-- ROW -->
+
+<hr>
+
+
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h4>Your Past Pickups:</h4>
+      <%= render 'past_pickups' %>
+    </div> <!-- COL -->
+  </div> <!-- ROW -->
+
+
 </div>
