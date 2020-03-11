@@ -43,3 +43,9 @@ p {
 #bgd-gradient2 {
   background: linear-gradient(180deg, #2FD4E5 100%, #72EADD 40.1%);
 }
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
