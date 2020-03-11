@@ -9,7 +9,11 @@
         <%= pickup.feedback %>
       </div>
       <div class="rating">
-        <%= pickup.rating %>
+        <% if pickup.rating %>
+          <%= image_tag 'thumbsup.png' %>
+        <% else %>
+          <%= image_tag 'thumbsdown.png' %>
+        <% end %>
       </div>
     </div>
   <% end %>
