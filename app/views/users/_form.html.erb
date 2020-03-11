@@ -5,3 +5,24 @@
   <%= f.input :address %>
   <%= f.button :submit %>
 <% end %>
+
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1"></script>
+<script>
+(function() {
+  var placesAutocomplete = places({
+    appId: 'plQ5TLZEG2VG',
+    apiKey: '75b92325913de48cff6fadde4204ea5e',
+    container: document.querySelector('#user_address')
+  });
+
+  var $address = document.querySelector('#address-value')
+  placesAutocomplete.on('change', function(e) {
+    $address.textContent = e.suggestion.value
+  });
+
+  placesAutocomplete.on('clear', function() {
+    $address.textContent = 'none';
+  });
+
+})();
+</script>
