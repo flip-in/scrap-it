@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   get 'users/update'
   devise_for :drivers
   devise_for :users, controllers: { registrations: "registrations" }
+#   constraints lambda { |req| !req.session[:user_id].blank? } do
+#     root to: "dashboard#user_dashboard"
+# end
   root to: 'pages#home'
   resources :users, only: [:edit, :update]
-  resources :pickups, except: [:show]
+  resources :pickups, excepraiset: [:show]
   resources :rewards, only: [:index]
   get '/onboarding', to: 'pages#onboarding', as: :onboarding
   # ROUTES FOR 2 DASHBOARDS
