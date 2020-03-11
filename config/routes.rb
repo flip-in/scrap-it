@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   resources :pickups, excepraiset: [:show]
   resources :rewards, only: [:index]
+  resources :user_rewards, only: [:new, :create]
+  resources :user_categories, only: [:create]
   get '/onboarding', to: 'pages#onboarding', as: :onboarding
   # ROUTES FOR 2 DASHBOARDS
   get '/dashboard', to: 'dashboards#user_dashboard', as: :user_dashboard

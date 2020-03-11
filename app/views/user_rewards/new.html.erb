@@ -1,0 +1,10 @@
+<h1>Select at least one of the following rewards</h1>
+  </div>
+
+<%= simple_form_for UserReward.new do |f| %>
+  <% @rewards.each do |rew| %>
+  <input type="checkbox" name="rewards_ids[]" value="<%= rew.id%>">
+  <label  class="btn btn-primary" for="<%= rew.name %>"><%= rew.name %></label>
+  <% end %>
+  <%= f.button :submit %>
+<% end %>
