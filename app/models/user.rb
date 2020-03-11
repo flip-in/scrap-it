@@ -12,7 +12,8 @@ class User < ApplicationRecord
   has_many :pickups
   after_update :check_badges
   validates :address, :first_name, :last_name, :phone_number, presence: true, on: :update
-
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
   private
 
   def check_badges
