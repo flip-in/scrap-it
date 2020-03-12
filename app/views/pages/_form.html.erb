@@ -1,0 +1,7 @@
+<%= simple_form_for UserCategory.new do |f| %>
+  <% Category.all.each do |cat| %>
+  <input type="checkbox" name="categories_ids[]" value="<%= cat.id%>">
+  <label  class="btn btn-primary" for="<%= cat.name %>"><%= cat.name %></label>
+  <% end %>
+  <%= f.button :submit %>
+<% end %>

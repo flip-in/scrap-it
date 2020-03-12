@@ -1,0 +1,17 @@
+.btn-primary {
+  color: $white;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background-color: $midteal !important;
+  border-radius: 5px;
+}
+
+#btn-white {
+  color: $midteal;
+  background-color: $white;
+  font-weight: 700;
+  border-radius: 5px;
+}

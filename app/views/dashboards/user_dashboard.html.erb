@@ -1,29 +1,33 @@
-<div class="container d-flex justify-content-center">
-  <div class="tabs-container">
-    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-      <li class="nav-item mx-2">
-        <a class="nav-link active" id="pills-schedule-tab" data-toggle="pill" href="#pills-schedule" role="tab" aria-controls="pills-schedule" aria-selected="true">Schedule</a>
-      </li>
-      <li class="nav-item mx-2">
-        <a class="nav-link" id="pills-rewards-tab" data-toggle="pill" href="#pills-rewards" role="tab" aria-controls="pills-rewards" aria-selected="false">Rewards</a>
-      </li>
-      <li class="nav-item mx-2">
-        <a class="nav-link" id="pills-impact-tab" data-toggle="pill" href="#pills-impact" role="tab" aria-controls="pills-impact" aria-selected="false">Impact</a>
-      </li>
-    </ul>
-    <div class="tab-content text-center" id="pills-tabContent">
-      <div class="tab-pane fade show active" id="pills-schedule" role="tabpanel" aria-labelledby="pills-schedule-tab">
-        <%= render 'schedule' %>
-      </div>
-      <div class="tab-pane fade" id="pills-rewards" role="tabpanel" aria-labelledby="pills-Rewards-tab">
-        <%= render 'rewards' %>
-      </div>
-      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-impact-tab">
-        <%= render 'impact' %>
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="tabs-container">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" id="pills-schedule-tab" data-toggle="pill" href="#pills-schedule" role="tab" aria-controls="pills-schedule" aria-selected="true">Schedule</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" id="pills-rewards-tab" data-toggle="pill" href="#pills-rewards" role="tab" aria-controls="pills-rewards" aria-selected="false">Rewards</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" id="pills-impact-tab" data-toggle="pill" href="#pills-impact" role="tab" aria-controls="pills-impact" aria-selected="false">Impact</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-schedule" role="tabpanel" aria-labelledby="pills-schedule-tab">
+            <%= render 'schedule' %>
+          </div>
+          <div class="tab-pane fade" id="pills-rewards" role="tabpanel" aria-labelledby="pills-Rewards-tab">
+            <%= render 'rewards' %>
+          </div>
+          <div class="tab-pane fade" id="pills-impact" role="tabpanel" aria-labelledby="pills-impact-tab">
+            <%= render 'impact' %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-
-</div>
+</div> <!-- Top DIV -->
 

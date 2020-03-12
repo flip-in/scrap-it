@@ -1,8 +1,21 @@
-<h1>Scrapit</h1>
-<p>Log in</p>
-<%= link_to "Sign up with email", new_user_registration_path, class: "nav-link" %>
-<%= link_to "Continue with Facebook", new_driver_registration_path, class: "nav-link" %>
-<%= link_to "Continue with Instagram", new_driver_registration_path, class: "nav-link" %>
-<%= link_to "Already a user ? Log in", new_user_session_path, class: "nav-link" %>
 
-
+<div class="container" id="loginbk">
+<div id="logo-container" >
+<%= image_tag 'logo.png' %>
+</div>
+<div>&nbsp;</div>
+<div class="home-container mt-3">
+     <h1>Create an account</h1>
+     <p class="textrow">Create your account to fully </p>
+     <p class= "text-row">experience the app</p>  
+</div>
+<div class="button-container mt-3">
+<%= link_to "Sign up with email", new_user_registration_path, class: "btnlogin" %>
+<%= link_to "Continue with Facebook", new_driver_registration_path, class: "btnlogin"%>
+<%= link_to "Continue with Instagram", new_driver_registration_path, class: "btnlogin"%>
+<p class="text-row">Already a user ? <strong>Log In</strong></p>
+</div>  
+</div>
+<%# <div class="row rowlogin"></div>
+<div class="row rowlogin"><%#= link_to "Continue with Instagram", new_driver_registration_path, class: "btnlogin"</div> 
+<%# <div class="row rowlogin"><%#= link_to "Already a user ? Log in", new_user_session_path, class: "btnlogin"</div> %> 

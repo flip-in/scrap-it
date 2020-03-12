@@ -1,0 +1,36 @@
+<% @previous_pickups.each do |pickup| %>
+  <% if pickup.status == 'complete' %>
+
+
+    <div class="card-pickup w-100 d-flex justify-content-between align-items-center">
+
+
+      <div class="card-date px-2">
+        <span class="pickup-day"><%= pickup.date.strftime("%e") %></span>
+        <span class="pickup-month"><%= pickup.date.strftime("%b").upcase %></span>
+      </div>
+
+
+      <div class="feedback">
+        <% if pickup.feedback %>
+          <div class="card-feedback">
+            <%= pickup.feedback %>
+          </div>
+        <% end %>
+      </div>
+
+
+      <div class="rating px-2">
+        <% if pickup.rating %>
+          <%= image_tag 'thumbsup.png', size: '32x32', class: 'rating-badge-sm' %>
+          <span class="rating-points">+25</span>
+        <% else %>
+          <%= image_tag 'thumbsdown.png', size: '32x32', class: 'rating-badge-sm', id: "whoops" %>
+          <span class="rating-whoops"><em>whoops!</em></span>
+        <% end %>
+      </div>
+
+
+    </div> <!-- PICKUP-CARD div -->
+  <% end %>
+<% end %>

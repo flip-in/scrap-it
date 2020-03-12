@@ -1,0 +1,19 @@
+.badge {
+  height: 40px;
+  width: 40px;
+}
+
+.badge-text {
+  color: $darkteal;
+  font-weight: 700;
+}
+.rating-badge-sm {
+  display: block;
+  border: 3px solid #37E2CE;
+  border-radius: 50%;
+}
+
+#whoops {
+  border: 3px solid $orange;
+}
+

@@ -3,10 +3,14 @@ Rails.application.routes.draw do
   get 'users/update'
   devise_for :drivers
   devise_for :users, controllers: { registrations: "registrations" }
+#   constraints lambda { |req| !req.session[:user_id].blank? } do
+#     root to: "dashboard#user_dashboard"
+# end
   root to: 'pages#home'
   resources :users, only: [:edit, :update]
-  resources :pickups, except: [:show]
+  resources :pickups, excepraiset: [:show]
   resources :rewards, only: [:index]
+  resources :user_rewards, only: [:new]
   get '/onboarding', to: 'pages#onboarding', as: :onboarding
   # ROUTES FOR 2 DASHBOARDS
   get '/dashboard', to: 'dashboards#user_dashboard', as: :user_dashboard
@@ -18,7 +22,7 @@ Rails.application.routes.draw do
   post '/user_categories', to: 'user_categories#create'
   # REDEEM CODE (pseudo 'new' action) -> CREATE USER_REWARD
   get '/rewards/:id/redeem', to: 'rewards#redeem', as: :redeem_reward
-  post '/rewards/:id', to: 'user_rewards#create'
+  post '/rewards', to: 'user_rewards#create', as: :user_rewards
   # FOR DRIVER TO REVIEW A PICKUP
   # TODO: Trigger callback function on USER Model for checking eligibility of badges
   get '/pickups/:id/review', to: 'pickups#review', as: :review_pickup

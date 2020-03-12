@@ -1,1 +1,14 @@
+.card {
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.09);
+  border: none;
+  width: 100%;
+}
 
+
+.card-colored {
+  background: linear-gradient(180deg, #72EADD 40.1%, #2FD4E5 100%);
+  border: none;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 100%;
+}

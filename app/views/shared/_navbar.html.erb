@@ -1,3 +1,5 @@
+
+<% if current_user %>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -15,11 +17,10 @@
         <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <li class="nav-item">
             <%= link_to "Action", "#", class: "dropdown-item" %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "Log out!", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>
@@ -31,3 +32,5 @@
     </ul>
   </div>
 </div>
+<% else %>
+<% end %>

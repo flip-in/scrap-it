@@ -195,7 +195,7 @@ status_arr = ["Pending", "Confirmed", "Completed"]
 # 2 in the past as bad
 pickups = [
   {
-  status: "Completed",
+  status: "complete",
   date: Date.today - 5,
   time_of_day: time_of_day_arr.sample,
   notes: "There might be some maintenance going on in the basement today.",
@@ -205,7 +205,7 @@ pickups = [
   driver_id: Driver.first.id
   },
   {
-  status: "Completed",
+  status: "complete",
   date: Date.today - 2,
   time_of_day: time_of_day_arr.sample,
   notes: "Look out for the green door! You might have to push hard",
@@ -214,7 +214,7 @@ pickups = [
   driver_id: Driver.first.id
   },
   {
-  status: "Completed",
+  status: "complete",
   date: Date.today - 10,
   time_of_day: time_of_day_arr.sample,
   rating: true,
@@ -222,7 +222,7 @@ pickups = [
   driver_id: Driver.first.id
   },
   {
-  status: "Completed",
+  status: "complete",
   date: Date.today - 14,
   time_of_day: time_of_day_arr.sample,
   rating: false,
@@ -231,7 +231,7 @@ pickups = [
   driver_id: Driver.first.id
   },
   {
-  status: "Pending",
+  status: "pending",
   date: Date.today + 3,
   time_of_day: time_of_day_arr.sample,
   notes: "Look out for the green door! You might have to push hard",
@@ -239,7 +239,7 @@ pickups = [
   driver_id: Driver.first.id
   },
   {
-  status: "Confirmed",
+  status: "confirmed",
   date: Date.today,
   time_of_day: time_of_day_arr.sample,
   user_id: User.first.id,
