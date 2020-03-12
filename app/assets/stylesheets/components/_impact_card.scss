@@ -13,11 +13,15 @@
 
 
   .card-badges {
+    display:flex;
+    justify-content: space-between;
     background-color: $white;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.09);
     border: none;
     width: 100%;
     height: 200px;
-    padding: 10px;
+    padding: 10px 0px;
+    margin: 0 auto;
+    border-bottom: #e6e6e6 solid 1px;
 
   }
