@@ -127,7 +127,7 @@ rewards = [
   {
   name: "10% off the next concert of your choice",
   description: "Use the code provided on https://ticketmaster.com to redeem your discount when checking out",
-  point_cost: 600,
+  point_cost: 200,
   redeem_code: Faker::Internet.password(min_length: 6, max_length: 8),
   amount: 30,
   category: Category.find_by_name("Music")

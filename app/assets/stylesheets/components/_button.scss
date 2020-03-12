@@ -9,8 +9,18 @@
 }
 
 #btn-white {
-  color: $darkteal;
+  color: $midteal;
   background-color: $white;
   font-weight: 700;
 
 }
+
+.btn-redeem {
+  background-color: $brightblue;
+  font-size: 16px;
+  color: $white;
+  font-weight: 700;
+  border-radius: 5px;
+  border: none;
+}
+
