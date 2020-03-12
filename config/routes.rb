@@ -22,12 +22,14 @@ Rails.application.routes.draw do
   post '/user_categories', to: 'user_categories#create'
   # REDEEM CODE (pseudo 'new' action) -> CREATE USER_REWARD
   get '/rewards/:id/redeem', to: 'rewards#redeem', as: :redeem_reward
-
   post '/rewards/:id', to: 'user_rewards#create'
   post '/filter_rewards', to: 'rewards#filter', as: :filter_rewards
   post '/reset_rewards', to: 'rewards#reset', as: :reset_rewards
-
   post '/rewards', to: 'user_rewards#create', as: :user_rewards
+
+
+
+
 
   # FOR DRIVER TO REVIEW A PICKUP
   # TODO: Trigger callback function on USER Model for checking eligibility of badges
