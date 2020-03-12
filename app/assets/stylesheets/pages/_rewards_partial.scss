@@ -1,23 +1,70 @@
+.card-colored {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+
+  .points-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200px;
+
+    h3 {
+      font-size: 12px;
+      padding-bottom: 5px;
+      text-align: center;
+      align-self: center;
+    }
+  }
+}
+
+.points-circle {
+  display: flex;
+  justify-content: center;
+  background-color: $white;
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 50%;
+  border: $midteal solid 5px;
+  margin-right: 20px;
+
+  h1 {
+    margin: auto auto;
+    text-align: center;
+  }
+}
+
 .header-box {
   background-color: $white;
   width: 100%;
   margin: 0px;
   border-radius: 5px 5px 0px 0px;
+  padding: 10px 0px 5px 10px;
 
-  h1 {
+  h4 {
     margin: 0px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 90%;
+    color: $darkteal;
   }
 }
 
+.list-rewards {
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.09);
+  border-radius: 5px;
+}
 .rewards-wrapper {
   background-color: $white;
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
-  padding-bottom: 10px;
   border-radius: 0px 0px 5px 5px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  overflow-y: scroll;
+  height: 250px;
 
   p {
     text-align: left;
@@ -41,6 +88,10 @@
   .redeem {
     max-width: 30%;
     margin: 0px;
+
+    h4 {
+      text-align: center;
+    }
   }
 }
 
@@ -48,3 +99,29 @@
   background-color: #C4C4C4;
 }
 
+.dropdown{
+  display: flex;
+  margin: 0px auto;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  justify-content: space-between;
+  width: 90%;
+  color: $midgrey;
+  text-align: center;
+
+  .btn-secondary {
+    background-color: #C4C4C4;
+    border: none;
+    padding: 2px 2px 2px 2px;
+    width: 200px;
+  }
+
+  a {
+    color: $midgrey;
+    padding-left: 15px;
+  }
+
+  .btn-redeem {
+    color: white !important;
+  }
+}

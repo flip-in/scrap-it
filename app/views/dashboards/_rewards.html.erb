@@ -1,15 +1,19 @@
-<div class="container m-0 p-0">
-  <div class="card p-2" id="card-colored">
-    <h3>you have <%= @user.points %> points available</h3>
+
+<div class="card-colored p-2">
+  <div class="points-circle">
+    <h1><%= @user.points %><br>pts</h1>
+  </div>
+  <div class="points-detail">
+    <h3>you have <%= @user.points %> points available to redeem</h3>
     <button class="btn" id="btn-white">view rewards here</button>
   </div>
 </div>
 
-<div class="col-md-6 px-0">
-    <div class="header-box col-md-6 px-0">
-      <h1>search bar</h1>
-    </div>
+<div class="list-rewards">
+  <div class="header-box">
+    <h4>Your preferred rewards</h4>
   </div>
+
 
   <div class="rewards-wrapper">
     <% @user_rewards.each do |rew| %>
@@ -18,27 +22,36 @@
           <p><%= rew.name %></p>
         </div>
         <div class="redeem">
-          <h4 style="font-size: 16px; color: #00A8B7; font-weight: 600;"><%= rew.point_cost %></h4>
-          <button class="btn-redeem">redeem</button>
+          <h4 style="font-size: 16px; color: #00A8B7; font-weight: 600;"><%= rew.point_cost %> pts</h4>
+          <% if rew.point_cost < current_user.points %>
+            <button class="btn-redeem">redeem</button>
+          <% else %>
+            <button class="grey-btn">need <%= rew.point_cost - current_user.points %> pts!</button>
+          <% end %>
         </div>
     </div>
     <% end %>
+  </div>
 </div>
 
-
-<h3>Other rewards you may be interested in</h3>
-<div class="rewards-wrapper">
-  <% @rewards.each do |rew| %>
-      <div class="reward-card">
-        <div class="rewardtitle">
-          <p><%= rew.name %></p>
-        </div>
-        <div class="redeem">
-          <h4 style="font-size: 16px; color: #00A8B7; font-weight: 600;"><%= rew.point_cost %></h4>
-          <button class="btn-redeem <%= 'grey-btn' if rew.point_cost > current_user.points %>"><i class="fas fa-plus"></i> add</button>
-        </div>
+<div class="list-rewards">
+  <div class="header-box">
+    <h4>See other rewards by category</h4>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Filter rewards by category
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <% Category.all.each do |cat| %>
+          <%= link_to cat.name, filter_rewards_path(reward_query: cat.name), method: :post, remote: true %><br>
+        <% end %>
       </div>
-  <% end %>
+
+      <%= link_to 'view all', reset_rewards_path, class: "btn btn-redeem", method: :post, remote: true %>
+    </div>
+  </div>
+
+  <%= render 'filtered_rewards', rewards: @rewards %>
 </div>
 
 

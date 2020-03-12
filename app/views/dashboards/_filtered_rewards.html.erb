@@ -1,0 +1,13 @@
+<div class="rewards-wrapper" id="filtered_rewards">
+    <% rewards.each do |rew| %>
+        <div class="reward-card">
+          <div class="rewardtitle">
+            <p><%= rew.name %></p>
+          </div>
+          <div class="redeem">
+            <h4 style="font-size: 16px; color: #00A8B7; font-weight: 600;"><%= rew.point_cost %> pts</h4>
+            <button class="btn-redeem <%= 'grey-btn' if rew.point_cost > current_user.points %>"><i class="fas fa-plus"></i> add</button>
+          </div>
+        </div>
+    <% end %>
+  </div>
