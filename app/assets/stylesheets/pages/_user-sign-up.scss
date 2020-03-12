@@ -1,0 +1,36 @@
+.big-sign-up-container {
+    background-color: white;
+    height: 100vh;
+    padding: 1.5rem;
+}
+
+.signup-title {
+    color: #309AA9;
+    font-size: 2rem;
+}
+
+.sign-up-input {
+    color: black;
+}
+.email {
+    color: black;
+    font-weight: bold;
+}
+.password {
+    color: black;
+    font-weight: bold;
+
+}
+
+.sign-up-button-container {
+    display: flex;
+    justify-content: center;
+}
+.sign-up-button {
+    width: 22rem;
+    height: 3rem;
+    background-color:#45D4E5 ;
+    color: white;
+    font-weight: bold;
+
+}
