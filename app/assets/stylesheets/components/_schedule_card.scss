@@ -33,6 +33,7 @@
 
 .card-schedule {
   p {
+    color: #999999;
     margin-bottom: 0;
     text-align:left;
   }
@@ -103,6 +104,7 @@
 }
 
 .reward-container {
+
   &.card-colored {
     height: 122px;
     margin-top: -15px;
@@ -110,5 +112,16 @@
     // position:relative;
     // top: 133px;
     // display: none;
+  }
+}
+
+.reward-container-text {
+  p{
+    color: #066E77;
+    padding: 5px;
+  }
+  span{
+    font-size: 17px;
+    font-weight: 700;
   }
 }

@@ -27,7 +27,17 @@
           </div> <!-- Schedule-container DIV -->
         </div> <!-- card-schedule DIV -->
         <div class="reward-container card-colored">
-        
+          <div class="reward-container-text">
+            <p>You are <%= @random_reward.point_cost - current_user.points %> points away from:</p>
+            <span><%= @random_reward.name %></span>
+          </div>
+          <div class="reward-container-progress">
+            <div class="barOverflow">
+              <div class="bar"></div>
+            </div>
+            <span class="d-none"> <%= @random_reward.point_cost %>
+            <span class="bar-points"><%= current_user.points %></span>
+          </div>
         </div>
       <% else %>
         <h3>Schedule a pickup</h3>

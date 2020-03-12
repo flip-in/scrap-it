@@ -259,9 +259,9 @@ UserCategory.create!( category_id: Category.find_by_name("Food").id, user_id: Us
 
 puts "Seeding user rewards..."
 
-UserReward.create!(reward_id: Reward.find_by_name("One free entry to Brooklyn Beerfest").id, user_id: User.first.id )
+UserReward.create!(reward_id: Reward.find_by_name("Two free New York Knicks Tickets").id, user_id: User.first.id )
 
-UserReward.create!(reward_id: Reward.find_by_name("50% off MOMA Tickets").id, user_id: User.first.id )
+UserReward.create!(reward_id: Reward.find_by_name("One 1-day pass for Governors Ball").id, user_id: User.first.id )
 
-UserReward.create!(reward_id: Reward.find_by_name("One free appetizer at Boucherie Union Square").id, user_id: User.first.id )
+UserReward.create!(reward_id: Reward.find_by_name("15% off Hamilton Tickets").id, user_id: User.first.id )
 
