@@ -12,3 +12,48 @@
 @import "components/index";
 @import "pages/index";
 @import 'flatpickr/dist/flatpickr.css';
+
+.container {
+  margin-top: 15px;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  //font-size: 24px;  
+  //color: $midteal;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  //font-size: 20px;
+  //color: $midgrey;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  //font-size: 12px;
+}
+
+// h4 {
+//   font-weight: 400;
+//   //font-size: 20px;
+//   //color: #6D6D6D;
+// }
+p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  //font-size: 16px;
+  //line-height: 14px;
+}
+//What is BGD gradient?
+
+#bgd-gradient1 {
+  background: linear-gradient(180deg, #72EADD 40.1%, #2FD4E5 100%);
+}
+
+#bgd-gradient2 {
+  background: linear-gradient(180deg, #2FD4E5 100%, #72EADD 40.1%);
+}
