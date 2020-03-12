@@ -13,6 +13,14 @@ class RewardsController < ApplicationController
     end
   end
 
+  def reset
+    @all_rewards = Reward.all.order(point_cost: :desc)
+    respond_to do |format|
+      format.html { redirect_to user_dashboard_path }
+      format.js
+    end
+  end
+
   def redeem
     @rewards = Reward.where(category_id: current_user.user_categories.pluck(:category_id))
 

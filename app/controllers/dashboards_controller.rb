@@ -10,6 +10,8 @@ class DashboardsController < ApplicationController
     # else
       @rewards = Reward.where(category_id: current_user.user_categories.pluck(:category_id)).order(point_cost: :asc)
       @rewards = @rewards.reject { |i| @user_rewards.include? i }
+
+      @all_rewards = Reward.all
     # end
     # Scheduling
     # Rewards

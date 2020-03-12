@@ -39,7 +39,7 @@
     <h4>See other rewards by category</h4>
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Filter rewards
+        Filter rewards by category
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <% Category.all.each do |cat| %>
@@ -47,7 +47,7 @@
         <% end %>
       </div>
 
-      <%= link_to 'view all', user_dashboard_path, class: "btn btn-redeem" %>
+      <%= link_to 'view all', reset_rewards_path, class: "btn btn-redeem", method: :post, remote: true %>
     </div>
   </div>
 

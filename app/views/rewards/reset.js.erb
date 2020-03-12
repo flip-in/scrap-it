@@ -1,0 +1,4 @@
+var rewards = document.querySelector('#filtered_rewards')
+rewards.innerHTML = ""
+
+rewards.insertAdjacentHTML("afterbegin", '<%= j render "dashboards/filtered_rewards", rewards: @all_rewards %>')
