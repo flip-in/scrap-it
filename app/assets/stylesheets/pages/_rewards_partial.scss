@@ -2,24 +2,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-
-  .points-detail {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 200px;
-
-    h3 {
-      font-size: 12px;
-      padding-bottom: 5px;
-      text-align: center;
-      align-self: center;
-    }
-  }
 }
 
 .points-circle {
+  h1 {
+    margin: auto auto;
+    text-align: center;
+  }
+
   display: flex;
   justify-content: center;
   background-color: $white;
@@ -28,20 +18,9 @@
   border-radius: 50%;
   border: $midteal solid 5px;
   margin-right: 20px;
-
-  h1 {
-    margin: auto auto;
-    text-align: center;
-  }
 }
 
 .header-box {
-  background-color: $white;
-  width: 100%;
-  margin: 0px;
-  border-radius: 5px 5px 0px 0px;
-  padding: 10px 0px 5px 10px;
-
   h4 {
     margin: 0px;
     font-size: 16px;
@@ -49,22 +28,20 @@
     width: 90%;
     color: $darkteal;
   }
+
+  background-color: $white;
+  width: 100%;
+  margin: 0px;
+  border-radius: 5px 5px 0px 0px;
+  padding: 10px 0px 5px 10px;
 }
 
 .list-rewards {
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.09);
   border-radius: 5px;
 }
+
 .rewards-wrapper {
-  background-color: $white;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  border-radius: 0px 0px 5px 5px;
-  margin-bottom: 15px;
-  overflow-y: scroll;
-  height: 250px;
 
   p {
     text-align: left;
@@ -85,14 +62,26 @@
   .rewardtitle {
     width: 3fr;
   }
-  .redeem {
-    max-width: 30%;
-    margin: 0px;
 
-    h4 {
-      text-align: center;
-    }
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  border-radius: 0px 0px 5px 5px;
+  margin-bottom: 15px;
+  overflow-y: scroll;
+  height: 250px;
+}
+
+
+.redeem {
+  h4 {
+    text-align: center;
   }
+
+  max-width: 30%;
+  margin: 0px;
 }
 
 .grey-btn {
@@ -100,15 +89,6 @@
 }
 
 .dropdown{
-  display: flex;
-  margin: 0px auto;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  justify-content: space-between;
-  width: 90%;
-  color: $midgrey;
-  text-align: center;
-
   .btn-secondary {
     background-color: #C4C4C4;
     border: none;
@@ -124,4 +104,13 @@
   .btn-redeem {
     color: white !important;
   }
+
+  display: flex;
+  margin: 0px auto;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  justify-content: space-between;
+  width: 90%;
+  color: $midgrey;
+  text-align: center;
 }
