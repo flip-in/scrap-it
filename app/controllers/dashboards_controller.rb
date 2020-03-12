@@ -10,6 +10,7 @@ class DashboardsController < ApplicationController
     @picked_up_kgs = @completed_pickups_number * 1.56
     @completed_pickups_total = Pickup.where(status: "complete").count
     @diverted_total = @completed_pickups_total * 1.56
+    @user_badges = UserBadge.where(user: current_user)
     # Scheduling
     # Rewards
     # Impact

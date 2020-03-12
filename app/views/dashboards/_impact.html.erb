@@ -1,5 +1,5 @@
-<div class="container">
- <div class="card-impact w-100">
+<div class="container p-0">
+ <div class="card-impact">
     <div class="card-impact-top">
       <div class="impact-avatar">
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
@@ -9,28 +9,48 @@
         <h5 style="color: white;"> <strong> <%= current_user.lifetime_points %> lifetime Scrapit points! </strong></h5>
       </div>
     </div>
-  <div class="impact-points">
-    <div>
-      <p> You've composted</p>
-      <p style="font-weight: bold; font-size: 24px">  <%= @picked_up_kgs %> Kg</p>
-    </div>
-    <div>
-      <p> Your total pickups</p>
-      <p style= "font-weight: bold; font-size: 24px"> <%= @completed_pickups_number %> X</h5>
-    </div>
-    <div>
-      <p> Scrapit has diverted </p>
-      <p style="font-weight: bold; font-size: 24px"> <%= @diverted_total %> Kg </p>
-    </div>
-  </div>
-</div>
-
-  <div class="row">
-    <div class="col-md-6 px-0 mx-auto">
-       <div class="card-badges w-100">
-        <h4>Your Scrapit badges</h4>
-
+    <div class="impact-points">
+      <div>
+        <p> You've composted</p>
+        <p style="font-weight: bold; font-size: 24px">  <%= @picked_up_kgs %> Kg</p>
+      </div>
+      <div>
+        <p> Your total pickups</p>
+        <p style= "font-weight: bold; font-size: 24px"> <%= @completed_pickups_number %> X</h5>
+      </div>
+      <div>
+        <p> Scrapit has diverted </p>
+        <p style="font-weight: bold; font-size: 24px"> <%= @diverted_total %> Kg </p>
       </div>
     </div>
   </div>
+    <div class="card-badges">
+      <div class="badges-title">
+        <h4>Your Scrapit badges</h4>
+      </div>
+      <div class="card-badges-top">
+        <!-- Remember to replace Badge.all by @user_badges -->
+        <% Badge.all.each do |badge| %>
+          <div class="badge-earned">
+            <%= image_tag "1st_pickup.png", class: "avatar" %>
+            <%= badge.description %>
+          </div>
+        <% end %>
+      </div>
+      <div class="badges-title">
+        <h4>Badges up next</h4>
+      </div>
+      <div class="badges-wrapper">
+        <!-- Remember to replace Badge.all with upcoming badges -->
+        <% Badge.all.each do |badge| %>
+        <div class="upcoming-badge">
+          <div class="badge-image">
+            <%= image_tag "25kg.png", class: "avatar" %>
+          </div>
+          <div class="badge-description">
+          <%= badge.description %>
+          </div>
+        </div>
+          <% end %>
+      </div>
 </div>
