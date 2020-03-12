@@ -1,23 +1,99 @@
-  .card-impact {
-    background: linear-gradient(180deg, #72EADD 40.1%, #2FD4E5 100%);
-    border: none;
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    width: 100%;
-    height: 200px;
-    margin-bottom: 20px;
-    padding: 10px;
-    color: $white !important;
+.card-impact {
+  justify-content: space-between;
+  background: linear-gradient(180deg, #72EADD 40.1%, #2FD4E5 100%);
+  border: none;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+  padding: 20px;
+  color: $white !important;
+}
 
+.card-impact-top {
+  display: flex;
+  .avatar {
+    width: 60px;
+    height: 60px;
   }
+}
 
+.impact-title {
+  font-weight: bold;
+  text-align: center;
+}
 
-  .card-badges {
-    background-color: $white;
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.09);
-    border: none;
-    width: 100%;
-    height: 200px;
-    padding: 10px;
-
+.impact-points {
+  display: flex;
+  text-align: center;
+  p {
+    margin-bottom: 0;
+    line-height: 1.5;
   }
+}
+
+.card-badges {
+  // display: flex;
+  justify-content: space-between;
+  background-color: $white;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.09);
+  border: none;
+  width: 100%;
+  padding: 10px;
+  border-bottom: #e6e6e6 solid 1px;
+  border-radius: 5px;
+    .avatar {
+    width: 60px;
+    height: 60px;
+    border: $midteal solid 3px;
+  }
+}
+
+.badges-title {
+  width: 100%;
+  // text-align: center;
+
+    h4 {
+      margin: 0px;
+      font-size: 16px;
+      font-weight: 600;
+      color: $darkteal !important;
+    }
+}
+
+.card-badges-top {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.badge-earned {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding:10px;
+  margin: 5px;
+}
+
+.badges-wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  border-top: grey;
+}
+
+.upcoming-badge {
+  display: flex;
+  // justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px 0px;
+  border-bottom: #e6e6e6 solid 1px;
+}
+
+.badge-description {
+  padding: 20px;
+}
+

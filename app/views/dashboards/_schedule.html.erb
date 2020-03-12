@@ -5,21 +5,29 @@
       <% if @next_pickup %>
         <div class="card-schedule p-1">
           <div class="schedule-text">
-            <h3>Your <u>next pickup</u> is scheduled for:</h3>
+            <p>Your <u>next pickup</u> is scheduled for:</p>
           </div>
           <div class="schedule-container">
             <div class="schedule-date">
-              <h4><%= @next_pickup.date.strftime("%e") %></h3>
-              <h4><%= @next_pickup.date.strftime("%b") %></h4>
+              <h3><%= @next_pickup.date.strftime("%e") %></h3>
+              <span><%= @next_pickup.date.strftime("%m") %> - <%=@next_pickup.date.strftime("%b").upcase %></span>
             </div>
             <div class="schedule-day">
-              <h4><%= @next_pickup.date.strftime("%A") %></h4>
-              <h3><%= @next_pickup.time_of_day.upcase %></h3>
+              <h3><%= @next_pickup.date.strftime("%A") %></h3>
+              <% time_of_day = @next_pickup.time_of_day.split(" ", 2) %>
+              <span>
+                <%= time_of_day[0] %>
+                <br>
+                <%= time_of_day[1] %>
+              </span>
             </div>
             <div class="reschedule">
-              <%= link_to 'reschedule', edit_pickup_path(@next_pickup), class: "btn btn-primary" %>
-            </div>
-          </div>
+              <%= link_to 'Reschedule', edit_pickup_path(@next_pickup), class: "btn btn-primary" %>
+            </div> <!--Close Schedule DIV -->
+          </div> <!-- Schedule-container DIV -->
+        </div> <!-- card-schedule DIV -->
+        <div class="reward-container card-colored">
+        
         </div>
       <% else %>
         <h3>Schedule a pickup</h3>

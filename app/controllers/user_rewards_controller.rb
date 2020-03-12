@@ -4,7 +4,6 @@ class UserRewardsController < ApplicationController
     @rewards = Reward.where(category_id: current_user.user_categories.pluck(:category_id))
   end
 
-
   def create
     current_user.user_rewards.destroy_all
     @rewards_array = params[:rewards_ids]
