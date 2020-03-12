@@ -4,7 +4,7 @@
       <div id='pickup-booking-dates'>
         <%= simple_form_for([@pickup]) do |f| %>
             <%= f.hidden_field :date %>
-            <%= f.input :time_of_day, as: :radio_buttons, collection: ["morning", "afternoon", "evening"] %>
+            <%= f.input :time_of_day, as: :radio_buttons, collection: ["Morning (7AM - 11AM)", "Afternoon (11AM - 4PM)", "Evening (4PM - 8PM)"] %>
             <%= f.input :notes, as: :text %>
             <%= f.submit "Confirm Pickup", class: "btn btn-primary" %>
             <%= link_to 'Cancel', user_dashboard_path, class: "btn btn-primary" %>

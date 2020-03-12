@@ -33,6 +33,7 @@
 
 .card-schedule {
   p {
+    margin-bottom: 0;
     text-align:left;
   }
   .scehdule-text{
@@ -42,11 +43,11 @@
   border: none;
   width: 100%;
   background: $white;
-}
+  border-radius: 5px 5px 0px 0px;
+  height: 140px;
+  padding-left: 10px !important;
+  // position:absolute;
 
-.schedule-date{
-  display: flex;
-  flex-direction: column;
 }
 
 .schedule-container{
@@ -56,24 +57,58 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 15px;
+    padding-left: 20px;
   }
+  .btn {
+    background-color: #C5F9F2;
+    border: none;
+    color: #37E2CE;
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
+.schedule-date{
+  h3{
+    font-size: 50px;
+    margin-bottom: 0;
+  }
+  span{
+    font-weight: 700;
+    font-size: 16px;
+  }
+  color: #37E2CE;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .schedule-day {
   h3 {
-    line-height: 2.4;
+    font-size: 25px;
+    font-weight: 400;
+    color: #626161;
+    margin-bottom: 0;
+  }
+  p {
+    color: #626161;
   }
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space;
   border-right: 1px solid $midgrey;
-  padding: 2px 10px 0px 10px;
-  margin: 0px 5px 0px 5px;
+  padding: 0px 20px 0px 10px;
+  margin: 10px 5px 10px 5px;
 }
 
 .reward-container {
-  .card-colored {
+  &.card-colored {
     height: 122px;
+    margin-top: -15px;
+    // z-index: 1000;
+    // position:relative;
+    // top: 133px;
+    // display: none;
   }
 }
