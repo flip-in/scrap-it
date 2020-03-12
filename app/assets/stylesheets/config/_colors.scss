@@ -27,3 +27,11 @@ $midgrey: #ACAFAF;
 
 $orange: #FFC585;
 $red: #FD0F15;
+
+#bgd-gradient1 {
+  background: linear-gradient(180deg, #72EADD 40.1%, #2FD4E5 100%);
+}
+
+#bgd-gradient2 {
+  background: linear-gradient(180deg, #2FD4E5 100%, #72EADD 40.1%);
+}
