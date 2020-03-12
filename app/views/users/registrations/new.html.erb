@@ -1,26 +1,35 @@
-<h2>Sign up!!!!!!!!!!!</h2>
-<p>here</p>
+<div class="big-sign-up-container pt-5">
+<div class="sign-up-container pt-5 ">
+<h1 class="signup-title ">Create an account</h1>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs pt-4">
     <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                label: 'Email address',
+                class: "sign-up-input",
+                input_html: {  autocomplete: "Email" }%>
+
     <%= f.input :password,
                 required: true,
+                class: "sign-up-input",
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: true,
+                class: "sign-up-input",
                 input_html: { autocomplete: "new-password" } %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+  <div class="sign-up-button-container mt-5">
+    <%= f.button :submit, "Sign up", class: "sign-up-button" %>
   </div>
 <% end %>
+<p class="mt-5">© Scrapit Technologies 2020</p>
 
-<%= render "drivers/shared/links" %>
+<%# <%= render "drivers/shared/links" %> 
+</div>
+</div>
