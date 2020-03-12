@@ -2,25 +2,45 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
 
-  .points-circle {
+.points-circle {
 
-    display: flex;
-    justify-content: center;
-    background-color: $white;
-    width: 100px !important;
-    height: 100px !important;
-    border-radius: 50%;
-    border: $midteal solid 5px;
-    margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $white;
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 50%;
+  border: $midteal solid 5px;
 
-    h1 {
-      margin: auto auto;
-      text-align: center;
-    }
+  h1 {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 16px;
+    color: $midteal;
+  }
+
+  #big-points {
+    font-size: 28px;
   }
 }
 
+.points-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 65%;
+  padding-left: 20px;
+
+  h3 {
+    margin: auto auto;
+    text-align: center;
+    font-size: 12px;
+    color: $white;
+  }
+}
 
 .header-box {
   h4 {
