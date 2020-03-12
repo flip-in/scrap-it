@@ -1,21 +1,33 @@
 <div class="container">
-
-  <div class="row">
-    <div class="col-md-6 px-0 mx-auto">
-       <div class="card-impact w-100">
-        <p>You're a rockstar, <%= current_user.first_name%>! <p>
+ <div class="card-impact w-100">
+    <div class="card-impact-top">
+      <div class="impact-avatar">
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
-        <h4 style="color: white;"> <strong> <%= current_user.lifetime_points %> lifetime Scrapit points! <h4>
-        <p> You've composted xx Kg</p>
-        <p> Your total pickups XXx</p>
-        <p> Scrapit has diverted xx Mkg
+      </div>
+      <div class="impact-title">
+        <p>You're a rockstar, <%= current_user.first_name%>! </p>
+        <h5 style="color: white;"> <strong> <%= current_user.lifetime_points %> lifetime Scrapit points! </strong></h5>
       </div>
     </div>
+  <div class="impact-points">
+    <div>
+      <p> You've composted</p>
+      <p style="font-weight: bold; font-size: 24px">  <%= @picked_up_kgs %> Kg</p>
+    </div>
+    <div>
+      <p> Your total pickups</p>
+      <p style= "font-weight: bold; font-size: 24px"> <%= @completed_pickups_number %> X</h5>
+    </div>
+    <div>
+      <p> Scrapit has diverted </p>
+      <p style="font-weight: bold; font-size: 24px"> <%= @diverted_total %> Kg </p>
+    </div>
   </div>
+</div>
 
   <div class="row">
     <div class="col-md-6 px-0 mx-auto">
-       <div class="card-badges">
+       <div class="card-badges w-100">
         <h4>Your Scrapit badges</h4>
 
       </div>
