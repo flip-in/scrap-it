@@ -1,7 +1,7 @@
 class DashboardsController < ApplicationController
   def user_dashboard
     @user = current_user
-    @next_pickup = @user.pickups.where('date >= ? AND status = ? OR status = ?', Date.today, 'pending', 'confirmed').order(date: :asc).first
+    @next_pickup = @user.pickups.where('date >= ? AND (status = ? OR status = ?)', Date.today, 'pending', 'confirmed').order(date: :asc).first
     @previous_pickups = @user.pickups.where('status= ?', 'complete').order(date: :desc).limit(10)
     @user_rewards = current_user.rewards.order(point_cost: :asc)
     # if params[:reward_query]
