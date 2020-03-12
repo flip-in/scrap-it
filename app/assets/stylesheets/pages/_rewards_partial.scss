@@ -1,7 +1,50 @@
 .header-box {
+  background-color: $white;
+  width: 100%;
+  margin: 0px;
+  border-radius: 5px 5px 0px 0px;
 
+  h1 {
+    margin: 0px;
+  }
 }
 
 .rewards-wrapper {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 10px;
+  border-radius: 0px 0px 5px 5px;
+  margin-bottom: 20px;
 
+  p {
+    text-align: left;
+    margin: 5px 0px 0px 20px;
+    width: 200px;
+    padding-top: 5px;
+  }
+
+  .reward-card {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 0px;
+    border-bottom: #e6e6e6 solid 1px;
+  }
+
+  .rewardtitle {
+    width: 3fr;
+  }
+  .redeem {
+    max-width: 30%;
+    margin: 0px;
+  }
 }
+
+.grey-btn {
+  background-color: #C4C4C4;
+}
+
