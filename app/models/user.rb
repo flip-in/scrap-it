@@ -19,10 +19,45 @@ class User < ApplicationRecord
     pickups.pluck(:date)
   end
   
+  def up_next_badges
+    user_badges = self.badges
+    upcoming_badges = Badge.all.select { |badge| badge.points >= self.lifetime_points}
+    upcoming_badges
+  end
+
+  devise :omniauthable, omniauth_providers: %i[facebook]
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
+      user.name = auth.info.name   # assuming the user model has a name
+      # user.image = auth.info.image # assuming the user model has an image
+      # If you are using confirmable and the provider(s) you use validate emails,
+      # uncomment the line below to skip the confirmation emails.
+      # user.skip_confirmation!
+    end
+  end
+
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+        user.email = data["email"] if user.email.blank?
+      end
+    end
+  end
+
+>>>>>>> master
   private
   
   def check_badges
     # TODO write this code.. happens after the driver gives thumbs up or down
+    user_badges = self.badges
+    earned_badges = Badge.all.select { |badge| badge.points <= self.lifetime_points}
+    badges_to_add = earned_badges - user_badges
+    badges_to_add.each do |new_badge|
+      UserBadge.create!(user: self, badge: new_badge)
+    end
   end
 end
 
