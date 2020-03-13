@@ -1,16 +1,7 @@
-.category-container h1 {
-    margin-top: 4vh;
+.rewards-sign-up-container h1 {
     color: #3BB8CA;
-}
-.category-container h2 {
-    margin-top: 4vh;
-    color: #3BB8CA;
-}
-
-.list-container {
-    max-width: 640px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 13px;
+    margin-top: 5vh;
+    margin-bottom: 4vh;
 }
 
 ul.ks-cboxtags {
@@ -80,23 +71,4 @@ ul.ks-cboxtags li input[type="checkbox"] {
   height: 50px;
 }
 ul.ks-cboxtags li input[type="checkbox"]:focus + label {
-}
-
-.category-submit {
-    display: flex;
-    justify-content: center;
-    // margin-top: vh;
-    width: 27vh;
-    // margin-left: 16vh;
-    background-color: #6EE2D4;
-    color: white;
-    font-weight: bold;
-}
-
-.flex-category {
-
-}
-.category-next-box {
-    display: flex;
-    justify-content: center;
 }
