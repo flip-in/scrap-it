@@ -47,7 +47,6 @@ class User < ApplicationRecord
     end
   end
 
->>>>>>> master
   private
   
   def check_badges
