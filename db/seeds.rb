@@ -2,15 +2,15 @@ require 'faker'
 require 'open-uri'
 
 puts 'Cleaning database'
-Badge.destroy_all
-Category.destroy_all
-Driver.destroy_all
-Pickup.destroy_all
-Reward.destroy_all
-User.destroy_all
 UserBadge.destroy_all
-UserCategory.destroy_all
+Badge.destroy_all
+Pickup.destroy_all
+Driver.destroy_all
 UserReward.destroy_all
+Reward.destroy_all
+UserCategory.destroy_all
+Category.destroy_all
+User.destroy_all
 
 puts 'Creating test user and driver...'
 
@@ -264,4 +264,9 @@ UserReward.create!(reward_id: Reward.find_by_name("One free entry to Brooklyn Be
 UserReward.create!(reward_id: Reward.find_by_name("50% off MOMA Tickets").id, user_id: User.first.id )
 
 UserReward.create!(reward_id: Reward.find_by_name("One free appetizer at Boucherie Union Square").id, user_id: User.first.id )
+
+Badge.first(5).each do |badge|
+  UserBadge.create!(user: User.first, badge: badge)
+end
+
 
