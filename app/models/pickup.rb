@@ -5,6 +5,7 @@ class Pickup < ApplicationRecord
   validates :status, inclusion: {in: ['pending', 'complete', 'confirmed']}
   before_save :assign_driver
 
+  
   def assign_driver
     self.driver = Driver.first
   end
