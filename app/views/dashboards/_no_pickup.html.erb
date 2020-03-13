@@ -1,0 +1,29 @@
+<div class="card-schedule p-1">
+  <div class="schedule-text">
+    <p>You have no scheduled pickups.</p>
+  </div>
+  <div class="booking-button">
+    <%= link_to "Book a pickup", new_pickup_path, class: "btn btn-primary w-60" %>
+  </div>
+</div> <!-- card-schedule DIV -->
+
+<div class="reward-container card-colored">
+
+  <div class="reward-container-text mr-2">
+    <p>You are <%= @random_reward.point_cost - current_user.points %> points away from:</p>
+    <span><%= @random_reward.name %></span>
+  </div>
+
+  <div class="reward-progress-card m-2">
+    <span>Keep Scrappin'</span>
+    <div class="reward-container-progress">
+      <div class="barOverflow">
+        <div class="bar"></div>
+      </div>
+      <%= image_tag 'thumbsup.png', size: '20x20' %>
+      <br>
+      <span class="bar-points"><%= current_user.points %></span>
+      <span class="d-none"> <%= @random_reward.point_cost %>
+    </div>
+  </div>
+</div>
