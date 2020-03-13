@@ -21,7 +21,7 @@ class PickupsController < ApplicationController
     @pickup.user = current_user
     @pickup.save
     if current_user.pickups.length == 1
-      current_user.points += 100
+      current_user.points += 25
       current_user.save
     end
 
