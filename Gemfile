@@ -19,6 +19,8 @@ gem 'webpacker'
 gem 'faker'
 gem 'geocoder'
 gem 'omniauth-facebook'
+gem "font-awesome-rails"
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
