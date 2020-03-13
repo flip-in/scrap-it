@@ -26,13 +26,15 @@
   </div>
     <div class="card-badges">
       <div class="badges-title">
+        <% unless current_user.badges.empty? %>
         <h4>Your Scrapit badges</h4>
+        <% end %>
       </div>
       <div class="card-badges-top">
         <!-- Remember to replace Badge.all by @user_badges -->
-        <% Badge.all.each do |badge| %>
+        <% current_user.badges.each do |badge| %>
           <div class="badge-earned">
-            <%= image_tag "1st_pickup.png", class: "avatar" %>
+            <%= image_tag badge.name, class: "avatar" %>
             <%= badge.description %>
           </div>
         <% end %>
@@ -42,10 +44,10 @@
       </div>
       <div class="badges-wrapper">
         <!-- Remember to replace Badge.all with upcoming badges -->
-        <% Badge.all.each do |badge| %>
+        <% current_user.up_next_badges.each do |badge| %>
         <div class="upcoming-badge">
           <div class="badge-image">
-            <%= image_tag "25kg.png", class: "avatar" %>
+            <%= image_tag badge.name, class: "avatar" %>
           </div>
           <div class="badge-description">
           <%= badge.description %>

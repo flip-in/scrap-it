@@ -72,8 +72,10 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
-  padding:10px;
+  padding:16px;
   margin: 5px;
+  color: $darkteal;
+  font-weight: 500;
 
   .avatar {
     border: $midteal solid 3px;
@@ -84,7 +86,7 @@
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  border-top: grey;
+  border-top: $midgrey;
 }
 
 .upcoming-badge {
@@ -102,5 +104,6 @@
 
 .badge-description {
   padding: 20px;
+  font-weight: 500;
 }
 

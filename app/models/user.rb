@@ -14,6 +14,13 @@ class User < ApplicationRecord
   validates :address, :first_name, :last_name, :phone_number, presence: true, on: :update
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+
+  def up_next_badges
+    user_badges = self.badges
+    upcoming_badges = Badge.all.select { |badge| badge.points >= self.lifetime_points}
+    upcoming_badges
+    
   devise :omniauthable, omniauth_providers: %i[facebook]
 
   def self.from_omniauth(auth)
@@ -40,6 +47,14 @@ class User < ApplicationRecord
 
   def check_badges
     # TODO write this code.. happens after the driver gives thumbs up or down
+    user_badges = self.badges
+    earned_badges = Badge.all.select { |badge| badge.points <= self.lifetime_points}
+    badges_to_add = earned_badges - user_badges
+    badges_to_add.each do |new_badge|
+      UserBadge.create!(user: self, badge: new_badge)
+    end
   end
+
+
 end
 

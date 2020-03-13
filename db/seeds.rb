@@ -2,15 +2,15 @@ require 'faker'
 require 'open-uri'
 
 puts 'Cleaning database'
-Badge.destroy_all
-Category.destroy_all
-Driver.destroy_all
-Pickup.destroy_all
-Reward.destroy_all
-User.destroy_all
 UserBadge.destroy_all
-UserCategory.destroy_all
+Badge.destroy_all
+Pickup.destroy_all
+Driver.destroy_all
 UserReward.destroy_all
+Reward.destroy_all
+UserCategory.destroy_all
+Category.destroy_all
+User.destroy_all
 
 puts 'Creating test user and driver...'
 
@@ -45,37 +45,37 @@ badges = [
   {
   name: "1st_pickup",
   description: "1st pickup badge!",
-  points: 25
+  points: 100
   },
   {
   name: "10th_pickup",
   description: "10th pickup badge!",
-  points: 20
+  points: 100+10*25
   },
   {
   name: "20th_pickup",
   description: "20th pickup badge!",
-  points: 40
+  points: 100+20*25
   },
   {
   name: "100th_pickup",
   description: "100th pickup badge!",
-  points: 200
+  points: 100+100*25
   },
   {
   name: "25kg",
   description: "25kg composted!",
-  points: 50
+  points: 100+((25/2)*25)
   },
   {
   name: "50kg",
   description: "50kg composted!",
-  points: 50
+  points: 100+((25/2)*50)
   },
   {
   name: "100kg",
   description: "100kg composted!",
-  points: 100
+  points: 100+((25/2)*100)
   }
 ]
 
@@ -264,4 +264,9 @@ UserReward.create!(reward_id: Reward.find_by_name("Two free New York Knicks Tick
 UserReward.create!(reward_id: Reward.find_by_name("One 1-day pass for Governors Ball").id, user_id: User.first.id )
 
 UserReward.create!(reward_id: Reward.find_by_name("15% off Hamilton Tickets").id, user_id: User.first.id )
+
+Badge.first(5).each do |badge|
+  UserBadge.create!(user: User.first, badge: badge)
+end
+
 
