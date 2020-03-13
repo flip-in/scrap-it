@@ -34,7 +34,7 @@
         <!-- Remember to replace Badge.all by @user_badges -->
         <% current_user.badges.each do |badge| %>
           <div class="badge-earned">
-            <%= image_tag badge.name, class: "avatar" %>
+            <%= image_tag "#{badge.name}.png", class: "avatar" %>
             <%= badge.description %>
           </div>
         <% end %>
@@ -47,7 +47,7 @@
         <% current_user.up_next_badges.each do |badge| %>
         <div class="upcoming-badge">
           <div class="badge-image">
-            <%= image_tag badge.name, class: "avatar" %>
+            <%= image_tag "#{badge.name}.png", class: "avatar" %>
           </div>
           <div class="badge-description">
           <%= badge.description %>
