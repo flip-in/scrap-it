@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 2020_03_13_032910) do
     t.string "qr_token"
     t.float "latitude"
     t.float "longitude"
-    t.integer "points"
+    t.integer "points", default: 0
     t.integer "lifetime_points", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
