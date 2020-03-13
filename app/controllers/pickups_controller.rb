@@ -20,6 +20,11 @@ class PickupsController < ApplicationController
     @pickup = Pickup.new(user_pickup_params)
     @pickup.user = current_user
     @pickup.save
+    if current_user.pickups.length == 1
+      current_user.points += 100
+      current_user.save
+    end
+
     redirect_to user_dashboard_path
   end
 

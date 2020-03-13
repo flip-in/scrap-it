@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   post '/filter_rewards', to: 'rewards#filter', as: :filter_rewards
   post '/reset_rewards', to: 'rewards#reset', as: :reset_rewards
   post '/rewards', to: 'user_rewards#create', as: :user_rewards
+  post '/add_user_rewards', to: 'user_rewards#add', as: :add_user_rewards
 
 
 
