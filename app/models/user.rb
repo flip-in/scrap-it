@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   def up_next_badges
     user_badges = self.badges
-    upcoming_badges = Badge.all.select { |badge| badge.points > self.lifetime_points}
+    upcoming_badges = Badge.all.select { |badge| badge.points >= self.lifetime_points}
     upcoming_badges
   end
 
@@ -26,10 +26,10 @@ class User < ApplicationRecord
   def check_badges
     # TODO write this code.. happens after the driver gives thumbs up or down
     user_badges = self.badges
-    available_badges = Badge.all.select { |badge| badge.points < self.lifetime_points}
-    earned_badges = available_badges - user_badges
-    earned_badges.each do |earned_badge|
-      UserBadge.create!(user: self, badge: earned_badge)
+    earned_badges = Badge.all.select { |badge| badge.points <= self.lifetime_points}
+    badges_to_add = earned_badges - user_badges
+    badges_to_add.each do |new_badge|
+      UserBadge.create!(user: self, badge: new_badge)
     end
   end
 

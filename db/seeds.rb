@@ -45,37 +45,37 @@ badges = [
   {
   name: "1st_pickup",
   description: "1st pickup badge!",
-  points: 25
+  points: 100
   },
   {
   name: "10th_pickup",
   description: "10th pickup badge!",
-  points: 20
+  points: 100+10*25
   },
   {
   name: "20th_pickup",
   description: "20th pickup badge!",
-  points: 40
+  points: 100+20*25
   },
   {
   name: "100th_pickup",
   description: "100th pickup badge!",
-  points: 200
+  points: 100+100*25
   },
   {
   name: "25kg",
   description: "25kg composted!",
-  points: 50
+  points: 100+((25/2)*25)
   },
   {
   name: "50kg",
   description: "50kg composted!",
-  points: 50
+  points: 100+((25/2)*50)
   },
   {
   name: "100kg",
   description: "100kg composted!",
-  points: 100
+  points: 100+((25/2)*100)
   }
 ]
 
