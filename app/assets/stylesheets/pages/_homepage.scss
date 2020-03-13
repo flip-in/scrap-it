@@ -72,6 +72,34 @@ height: 33vh;
 
 }
 
+.continue {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.6vh;
+    
+}
+.continue p, p:hover, p:active, p:visited, p:focus {
+    text-decoration: none;
+}
+// a, a:hover, a:active, a:visited, a:focus {
+//     text-decoration:none;
+// }
+
+.fa {
+    margin-top: 0.5vh;
+    margin-right: 1vh;
+}
+
+.fb-btn {
+    background-color: #6BB7EF;
+    opacity: 0.85;
+
+}
+
+.fb-btn:hover {
+    opacity: 1;
+}
+
 .home-container h1 {
     color: white;
     text-align: center;
@@ -97,4 +125,21 @@ height: 33vh;
     background-color: #3B5998;
     color: white;
       
+}
+
+.fb-btn p {
+    font-weight: bold;
+}
+
+.insta-btn {
+    background-color: #E1306C;
+    color: white;
+    font-weight: bolder;
+}
+.insta {
+    margin-top: 0.6vh;
+    font-weight: bolder;
+}
+.insta p {
+    font-weight: bold;
 }
