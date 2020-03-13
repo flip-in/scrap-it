@@ -43,6 +43,21 @@ ul.ks-cboxtags li label {
 
 }
 
+ul.ks-cboxtags li label::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "FontAwesome";
+    font-weight: 900;
+    font-size: 12px;
+    padding: 2px 6px 2px 2px;
+    content: "\f067";
+    transition: transform .3s ease-in-out;
+}
+
+
 // ul.ks-cboxtags li label::before {
 //     display: inline-block;
 //     font-style: normal;
@@ -56,6 +71,12 @@ ul.ks-cboxtags li label {
 //     content: "\f067";
 //     transition: transform .3s ease-in-out;
 // }
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
+    content: "\f00c";
+    transform: rotate(-360deg);
+    transition: transform .3s ease-in-out;
+}
 
 ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
     transform: rotate(-360deg);
