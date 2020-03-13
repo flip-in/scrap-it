@@ -15,7 +15,11 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    user_dashboard_path
+    if resource.user_rewards.empty?
+      '/onboarding'
+    else
+      '/dashboard'
+    end
   end
 
   private
