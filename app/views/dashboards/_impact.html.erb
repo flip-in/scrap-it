@@ -47,7 +47,7 @@
         <% current_user.up_next_badges.each do |badge| %>
         <div class="upcoming-badge">
           <div class="badge-image">
-            <%= image_tag badge.name, class: "avatar" %>
+            <%= image_tag "#{badge.name}.png", class: "avatar" %>
           </div>
           <div class="badge-description">
           <%= badge.description %>
