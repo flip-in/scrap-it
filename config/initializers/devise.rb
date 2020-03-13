@@ -257,6 +257,7 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
   config.omniauth :facebook, "2640795749486594", "64bef836c589543b86c3d70af5740f80"
+  # , :callback_path => "/onboarding"
 
   
   # ==> OmniAuth
