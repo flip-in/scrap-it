@@ -1,0 +1,10 @@
+var rewards = document.querySelector('#users_rewards')
+rewards.innerHTML = ""
+rewards.insertAdjacentHTML("afterbegin", '<%= j render "dashboards/user_rewards", user_rewards: @user_rewards %>')
+
+var filtered_rewards = document.querySelector('#filtered_rewards')
+filtered_rewards.innerHTML = ""
+console.log("hello")
+filtered_rewards.insertAdjacentHTML("afterbegin", '<%= j render "dashboards/filtered_rewards", rewards: @rewards %>')
+
+

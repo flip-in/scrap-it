@@ -6,7 +6,11 @@
           </div>
           <div class="redeem">
             <h4 style="font-size: 16px; color: #00A8B7; font-weight: 600;"><%= rew.point_cost %> pts</h4>
-            <button class="btn-redeem <%= 'grey-btn' if rew.point_cost > current_user.points %>"><i class="fas fa-plus"></i> add</button>
+            <% if rew.point_cost > current_user.points %>
+              <%= link_to " + add", add_user_rewards_path(reward_id: rew.id), class: "btn btn-redeem grey-btn", style: "font-size: 16px; padding: 6px 12px", method: :post, remote:  true %>
+            <% else %>
+              <%= link_to "+ add", add_user_rewards_path(reward_id: rew.id), class: "btn btn-redeem", method: :post, remote: true %>
+            <% end %>
           </div>
         </div>
     <% end %>
