@@ -1,0 +1,17 @@
+<div class="rewards-wrapper" id="users_rewards">
+    <% user_rewards.each do |rew| %>
+      <div class="reward-card">
+        <div class="rewardtitle">
+          <p><%= rew.name %></p>
+        </div>
+        <div class="redeem">
+          <h4 style="font-size: 16px; color: #00A8B7; font-weight: 600;"><%= rew.point_cost %> pts</h4>
+          <% if rew.point_cost <= current_user.points %>
+            <button class="btn-redeem">redeem</button>
+          <% else %>
+            <button class="grey-btn">need <%= rew.point_cost - current_user.points %> pts!</button>
+          <% end %>
+        </div>
+    </div>
+    <% end %>
+  </div>

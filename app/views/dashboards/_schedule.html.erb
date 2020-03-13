@@ -3,36 +3,10 @@
   <div class="row">
     <div class="col-md-6 px-0 mx-auto">
       <% if @next_pickup %>
-        <div class="card-schedule p-1">
-          <div class="schedule-text">
-            <p>Your <u>next pickup</u> is scheduled for:</p>
-          </div>
-          <div class="schedule-container">
-            <div class="schedule-date">
-              <h3><%= @next_pickup.date.strftime("%e") %></h3>
-              <span><%= @next_pickup.date.strftime("%m") %> - <%=@next_pickup.date.strftime("%b").upcase %></span>
-            </div>
-            <div class="schedule-day">
-              <h3><%= @next_pickup.date.strftime("%A") %></h3>
-              <% time_of_day = @next_pickup.time_of_day.split(" ", 2) %>
-              <span>
-                <%= time_of_day[0] %>
-                <br>
-                <%= time_of_day[1] %>
-              </span>
-            </div>
-            <div class="reschedule">
-              <%= link_to 'Reschedule', edit_pickup_path(@next_pickup), class: "btn btn-primary" %>
-            </div> <!--Close Schedule DIV -->
-          </div> <!-- Schedule-container DIV -->
-        </div> <!-- card-schedule DIV -->
-        <div class="reward-container card-colored">
-        
-        </div>
+        <%= render 'next_pickup' %>
       <% else %>
-        <h3>Schedule a pickup</h3>
+        <%= render 'no_pickup' %>
       <% end %>
-      <%= link_to "Book a pickup", new_pickup_path %>
     </div> <!-- COL -->
   </div> <!-- ROW -->
 

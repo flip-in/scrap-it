@@ -102,13 +102,21 @@
     text-align: center;
   }
 
+  .grey-btn{
+    background-color: $midgrey;
+    font-size: 12px;
+    color: $white;
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 5px;
+    box-shadow: 1px 4px 4px 0px rgba(239, 239, 241, 1);
+  }
+
   max-width: 30%;
   margin: 0px;
 }
 
-.grey-btn {
-  background-color: #C4C4C4;
-}
 
 .dropdown{
   .btn-secondary {

@@ -1,5 +1,4 @@
 .rating {
-
   width: 20%;
   display: flex;
   flex-direction: column;
@@ -16,7 +15,13 @@
 .nav-pills{
   display: flex;
   justify-content: space-evenly;
+}
 
+.booking-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
 }
 
 
