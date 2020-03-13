@@ -16,6 +16,12 @@ class User < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   private
 
+  def unavailable_dates
+    # pickups.pluck(:start_date, :end_date).map do |range|
+    #   { from: range[0], to: range[1] }
+    # end
+  end
+
   def check_badges
     # TODO write this code.. happens after the driver gives thumbs up or down
   end
