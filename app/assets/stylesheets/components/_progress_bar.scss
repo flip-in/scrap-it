@@ -2,16 +2,23 @@
   span{
     color: $aqua;
   }
+  .bar-points{
+    font-size: 15px;
+  }
+  img{
+    margin-bottom: -10px;
+  }
   position: relative;
-  margin: 4px;
-  float:left;
+  float:right;
   text-align: center;
+  margin-top: 2px;
+  margin-right: 13px;
 }
 .barOverflow{ /* Wraps the rotating .bar */
   position: relative;
   overflow: hidden; /* Comment this line to understand the trick */
   width: 90px; height: 45px; /* Half circle (overflow) */
-  margin-bottom: -14px; /* bring the numbers up */
+  margin-bottom: -40px; /* bring the numbers up */
 }
 .bar{
   position: absolute;
@@ -19,7 +26,7 @@
   width: 90px; height: 90px; /* full circle! */
   border-radius: 50%;
   box-sizing: border-box;
-  border: 5px solid #eee;     /* half gray, */
+  border: 7px solid #eee;     /* half gray, */
   border-bottom-color: #0bf;  /* half azure */
   border-right-color: #0bf;
 }

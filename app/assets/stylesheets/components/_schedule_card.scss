@@ -113,15 +113,30 @@
     // top: 133px;
     // display: none;
   }
+  display: flex;
 }
 
 .reward-container-text {
   p{
     color: #066E77;
-    padding: 5px;
+    // margin-bottom: 0;
   }
   span{
+    padding: 4px;
     font-size: 17px;
     font-weight: 700;
   }
+  padding: 2px 0px 4px 4px;
+}
+
+.reward-progress-card {
+  span{
+    color: #089AA9;
+    font-size: 10px;
+  }
+  text-align: center;
+  background-color: $white;
+  height: 80%;
+  width: 40%;
+  border-radius: 5%;
 }
