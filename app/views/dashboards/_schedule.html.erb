@@ -26,11 +26,14 @@
             </div> <!--Close Schedule DIV -->
           </div> <!-- Schedule-container DIV -->
         </div> <!-- card-schedule DIV -->
+
         <div class="reward-container card-colored">
+        
           <div class="reward-container-text mr-2">
             <p>You are <%= @random_reward.point_cost - current_user.points %> points away from:</p>
             <span><%= @random_reward.name %></span>
           </div>
+
           <div class="reward-progress-card m-2">
             <span>Keep Scrappin'</span>
             <div class="reward-container-progress">
@@ -43,7 +46,9 @@
               <span class="d-none"> <%= @random_reward.point_cost %>
             </div>
           </div>
+
         </div>
+
       <% else %>
         <h3>Schedule a pickup</h3>
       <% end %>
