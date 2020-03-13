@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   get 'users/edit'
   get 'users/update'
   devise_for :drivers
-  devise_for :users, controllers: { registrations: "registrations" }
+  devise_for :users, controllers: { registrations: "registrations",
+                                    omniauth_callbacks: 'users/omniauth_callbacks' }
+
 #   constraints lambda { |req| !req.session[:user_id].blank? } do
 #     root to: "dashboard#user_dashboard"
 # end
