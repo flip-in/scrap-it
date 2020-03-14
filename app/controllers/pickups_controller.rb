@@ -40,7 +40,7 @@ class PickupsController < ApplicationController
   def update
     # Patch action
     # used on the review page and edit page
-    if current_user.class == driver
+    if current_user.class == Driver
       if @pickup.update(driver_pickup_params)
         redirect_to driver_dashboard_path
       else
@@ -48,7 +48,7 @@ class PickupsController < ApplicationController
       end
     else
       if @pickup.update(user_pickup_params)
-        redirecto_to user_dashboard_path
+        redirect_to user_dashboard_path
       else
         render 'edit'
       end
