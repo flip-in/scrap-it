@@ -1,0 +1,52 @@
+<div class="card-schedule p-1">
+  <div class="schedule-text">
+    Your next pickup is scheduled for TODAY:<br>
+    <%= @next_pickup.time_of_day %>
+  </div>
+  <div class="status-container">
+    <div class="status-circle status-done">
+      <%# <i class="fas fa-check"></i> %>
+      <span><em>Booked!</em></span>
+    </div>
+    <div class="status-line status-active"></div>
+    <div class="status-circle status-active">
+      <!-- Icon -->
+      <span>Scrapit en&#8209route</span>
+    </div>
+    <div class="status-line status-inactive"></div>
+    <div class="status-circle status-inactive">
+      <!-- Icon -->
+      <span>Picked up</span>
+    </div>
+    <div class="status-line status-inactive"></div>
+    <div class="status-circle-big status-inactive">
+      <%= image_tag 'thumbsup-grey.png', size: '32x32' %>
+      <span>+25</span>
+    </div>
+    <%# <div class="reschedule"> %>
+      <%#= link_to 'Reschedule', edit_pickup_path(@next_pickup), class: "btn btn-primary" %>
+    <%# </div> <!--Close Schedule DIV --> %>
+  </div> <!-- Status-container DIV -->
+</div> <!-- card-schedule DIV -->
+
+<div class="reward-container card-colored">
+
+  <div class="reward-container-text mr-2">
+    <p>You are <%= @random_reward.point_cost - current_user.points %> points away from:</p>
+    <span><%= @random_reward.name %></span>
+  </div>
+
+  <div class="reward-progress-card m-2">
+    <span>Keep Scrappin'</span>
+    <div class="reward-container-progress">
+      <div class="barOverflow">
+        <div class="bar"></div>
+      </div>
+      <%= image_tag 'thumbsup.png', size: '20x20' %>
+      <br>
+      <span class="bar-points"><%= current_user.points %></span>
+      <span class="d-none"> <%= @random_reward.point_cost %>
+    </div>
+  </div>
+</div>
+<%= link_to "Book your next pickup", new_pickup_path, class: "btn btn-primary w-100" %>
