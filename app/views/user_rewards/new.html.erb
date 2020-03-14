@@ -1,10 +1,18 @@
-<h1>Select at least one of the following rewards</h1>
-  </div>
+<div class="big-sign-up-container pt-5">
+  <div class="sign-up-container pt-5 ">
+    <h1 class="signup-title ">Pick some rewards to earn</h1>
 
-<%= simple_form_for UserReward.new do |f| %>
-  <% @rewards.each do |rew| %>
-  <input type="checkbox" name="rewards_ids[]" value="<%= rew.id%>">
-  <label  class="btn btn-primary" for="<%= rew.name %>"><%= rew.name %></label>
-  <% end %>
-  <%= f.button :submit %>
-<% end %>
+      <%= simple_form_for UserReward.new do |f| %>
+        <div class="list-container">
+          <ul class="ks-cboxtags">
+            <% @rewards.each do |rew| %>
+              <li><input name="rewards_ids[]" type="checkbox" value="<%= rew.id%>">
+              <label for="<%= rew.name %>"><%= rew.name %></label></li>
+            <% end %>
+          </ul>
+          <%= f.button :submit, "continue", class: "category-submit" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
