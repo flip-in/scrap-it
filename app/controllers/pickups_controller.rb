@@ -22,6 +22,7 @@ class PickupsController < ApplicationController
     @pickup.save
     if current_user.pickups.length == 1
       current_user.points += 100
+      current_user.lifetime_points += 100
       current_user.save
     end
 
