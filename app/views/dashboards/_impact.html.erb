@@ -5,7 +5,7 @@
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
       </div>
       <div class="impact-title">
-        <p>You're a rockstar, <%= current_user.first_name%>! </p>
+        <p><strong>You're a rockstar, <%= current_user.first_name%>!</strong></p>
         <h5 style="color: white;"> <strong> <%= current_user.lifetime_points %> lifetime Scrapit points! </strong></h5>
       </div>
     </div>
@@ -35,7 +35,6 @@
         <% current_user.badges.each do |badge| %>
           <div class="badge-earned">
             <%= image_tag "#{badge.name}.png", class: "avatar" %>
-            <%= badge.description %>
           </div>
         <% end %>
       </div>
