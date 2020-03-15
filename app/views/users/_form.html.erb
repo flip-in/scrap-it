@@ -3,7 +3,9 @@
   <%= f.input :last_name %>
   <%= f.input :phone_number %>
   <%= f.input :address %>
-  <%= f.button :submit %>
+  <div class="sign-up-button-container mt-5">
+    <%= f.button :submit, "Continue", class: "sign-up-button" %>
+  </div>
 <% end %>
 
 <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1"></script>

@@ -1,19 +1,14 @@
 <%= simple_form_for UserCategory.new do |f| %>
-<div class="list-container">
-<div class="checkbox-box">
-<ul class="ks-cboxtags flex-category">
-  <% Category.all.each do |cat| %>
-  <li><input name="categories_ids[]" type="checkbox" value="<%= cat.id%>">
-      <label for="<%= cat.name %>"><%= cat.name %></label></li>
-  <% end %>
-  </div>
-  <div class="category-next-box">
-  <%= f.button :submit, "Next", class: "category-submit" %>
+  <div class="list-container">
+    <ul class="ks-cboxtags">
+      <% Category.all.each do |cat| %>
+        <li><input name="categories_ids[]" type="checkbox" value="<%= cat.id%>">
+            <label for="<%= cat.name %>"><%= cat.name %></label></li>
+      <% end %>
+    </ul>
+    <%= f.button :submit, class: "category-submit" %>
   </div>
 <% end %>
-</ul>
-</div>
-
 
 <%# <div class="list-container">
   <ul class="ks-cboxtags">
@@ -33,7 +28,7 @@
     <li><input type="checkbox" id="checkboxThirteen" value="Baby Moondancer"><label for="checkboxThirteen">Baby
                     Moondancer</label></li>
     <li><input type="checkbox" id="checkboxFourteen" value="Medley"><label for="checkboxFourteen">Medley</label></li>
-    <li><input type="checkbox" id="checkboxFifteen" value="Firefly"><label for="checkboxFifteen">Firefly</label></li> %> 
-  </ul>
+    <li><input type="checkbox" id="checkboxFifteen" value="Firefly"><label for="checkboxFifteen">Firefly</label></li> %>
+<!--   </ul>
 
-</div>
+</div> -->

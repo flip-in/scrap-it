@@ -1,152 +1,155 @@
 #loginbk {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-image: linear-gradient(#61D2DD, #73EBDD);
-    background-size: cover;
-    height: 100vh;
-    padding: 0em;
-    }
-    
-    #logo-container {
-        width: 100%;
-        margin-bottom: 10vw;
-        display: flex;
-        justify-content: center;
-    }
-    
-    .home-container {
-        width: 100%;
-    
-    }
-    
-    // #home-container {
-    //     position: absolute;
-    //     top: 46vmax;
-    //     width: 100%;
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: space-between;
-        // height: 48vh;
-        // // margin-top: 17rem;
-        // width: 100vmin;
-        
-    // }
-    
-    .btnlogin {
-        color: $midteal;
-        background-color: $white;
-        font-weight: 700;
-        border-radius: 5px;
-        text-decoration: none;
-    }
-    
-    
-    .button-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 33vh;
-    
-     a {
-         text-align: center;
-        width: 17rem;
-        height: 3rem;
-        
-    }
-    }
-    
-    .rowlogin {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        // height: 12vw;
-    }
-    
-    .btnlogin {
-        background-color: white;
-        padding: 5px 7px;
-        border-radius: 5px;
-    
-    }
-    
-    .continue {
-        display: flex;
-        justify-content: center;
-        margin-top: 0.6vh;
-        
-    }
-    .continue p, p:hover, p:active, p:visited, p:focus {
-        text-decoration: none;
-    }
-    // a, a:hover, a:active, a:visited, a:focus {
-    //     text-decoration:none;
-    // }
-    
-    .fa {
-        margin-top: 0.5vh;
-        margin-right: 1vh;
-    }
-    
-    .fb-btn {
-        background-color: #6BB7EF;
-        opacity: 0.85;
-    
-    }
-    
-    .fb-btn:hover {
-        opacity: 1;
-    }
-    
-    .home-container h1 {
-        color: white;
-        text-align: center;
-    }
-    
-    .home-container p {
-        color: #EDEDED;
-        text-align: center;
-    }
-    .already {
-        color: #ACAFAF;
-        display: flex;
-        justify-content: center;
-    }
-    .already1 {
-        width: 5rem;
-    }
-    .already2 {
-        width: 7rem ;
-    }
-    
-    .fb-btn {
-        background-color: #3B5998;
-        color: white;
-          
-    }
-    
-    .fb-btn p {
-        font-weight: bold;
-    }
-    
-    .insta-btn {
-        background-color: #E1306C;
-        color: white;
-        font-weight: bolder;
-        padding-top: 1.3vh;
-    }
-    .insta {
-        margin-top: 0.6vh;
-        font-weight: bolder;
-    }
-    .insta p {
-        padding-top: 3vh;
-        font-weight: bold;
-    }
-    .email-btn {
-        padding-top: 1.3vh;
-        color: #3BB8CA;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: linear-gradient(#61D2DD, #73EBDD);
+  background-size: cover;
+  height: 100vh;
+  padding: 0em;
+}
+
+#logo-container {
+  width: 100%;
+  margin-bottom: 10vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.home-container {
+  width: 100%;
+  margin-bottom: 80px;
+  h1 {
+    color: white;
+    text-align: center;
+  }
+
+  p {
+    color: #EDEDED;
+    text-align: center;
+  }
+}
+
+.button-container {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 27vh;
+
+ a {
+    text-align: center;
+    width: 17rem;
+    height: 3rem;
+  }
+}
+
+#user_login {
+  color: white;
+  font-size: 18px;
+  margin: 0px;
+}
+.btn-userlogin {
+  background-color: $darkteal;
+  font-size: 20px;
+  color: $white;
+  font-weight: 600;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1)
+}
+
+.btnlogin {
+  color: $darkteal;
+  background-color: white;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 5px 7px;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.rowlogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // height: 12vw;
+}
+
+.continue {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.6vh;
+
+}
+.continue p, p:hover, p:active, p:visited, p:focus {
+  text-decoration: none;
+}
+// a, a:hover, a:active, a:visited, a:focus {
+//     text-decoration:none;
+// }
+
+.fa {
+  margin-top: 0.5vh;
+  margin-right: 1vh;
+}
+
+.fb-btn {
+  p {
+    font-weight: 400;
+  }
+
+  background-color: #6BB7EF;
+  opacity: 0.85;
+}
+
+.fb-btn:hover {
+  opacity: 1;
+}
+
+
+.already {
+  color: #ACAFAF;
+  display: flex;
+  justify-content: center;
+}
+
+.already1 {
+  width: 5rem;
+}
+
+.already2 {
+  width: 7rem ;
+}
+
+.fb-btn {
+  background-color: #3B5998;
+  color: white;
+}
+
+.fb-btn p {
+  font-weight: bold;
+}
+
+.email-btn {
+  padding: 5px;
+  color: $midteal;
+  background-color: white;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.copyright {
+  margin-top: 50px;
+  font-weight: lighter;
+  color: white;
+  opacity: 0.9;
+  text-align: center;
+}

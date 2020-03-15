@@ -237,14 +237,14 @@ pickups = [
   notes: "Look out for the green door! You might have to push hard",
   user_id: User.first.id,
   driver_id: Driver.first.id
-  },
-  {
-  status: "confirmed",
-  date: Date.today,
-  time_of_day: time_of_day_arr.sample,
-  user_id: User.first.id,
-  driver_id: Driver.first.id
   }
+  # {
+  # status: "confirmed",
+  # date: Date.today,
+  # time_of_day: time_of_day_arr.sample,
+  # user_id: User.first.id,
+  # driver_id: Driver.first.id
+  # }
 ]
 
 Pickup.create!(pickups)

@@ -1,11 +1,14 @@
-.category-container h1 {
+.category-container{
+  h1 {
     margin-top: 4vh;
-    color: #3BB8CA;
+    padding: 1.5rem 1.5rem 1.5 1.5rem;
+  }
+
+  background-color: white;
+  height: 100vh;
+  padding: 15px;
 }
-.category-container h2 {
-    margin-top: 4vh;
-    color: #3BB8CA;
-}
+
 
 .list-container {
     max-width: 640px;
@@ -14,8 +17,12 @@
 }
 
 ul.ks-cboxtags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     list-style: none;
-    padding: 20px;
+    margin: 0px;
+    padding: none;
 }
 ul.ks-cboxtags li{
   display: inline;
@@ -104,20 +111,11 @@ ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
 
 .category-submit {
-    display: flex;
-    justify-content: center;
-    // margin-top: vh;
-    width: 27vh;
-    // margin-left: 16vh;
-    background-color: #6EE2D4;
+    margin-top: 4vh;
+    padding: 10px 12px;
+    width: 100%;
+    background-color:#45D4E5 ;
     color: white;
     font-weight: bold;
 }
 
-.flex-category {
-
-}
-.category-next-box {
-    display: flex;
-    justify-content: center;
-}
