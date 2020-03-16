@@ -1,0 +1,52 @@
+.reward-modal-background {
+  z-index: 100;
+  width: 100%;
+  background-color: #1d1d1dad;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reward-modal-body {
+  width: 90%;
+  height: 80vh;
+  background-color: white;
+  border-radius: 5px;
+  position: relative;
+}
+
+.close-reward {
+  position: absolute;
+  font-size: 32px;
+  right: 7px;
+  top: 7px;
+  cursor: pointer;
+  color: #D5D5D5;
+}
+
+
+.reward-info {
+  h4{
+    color: $darkteal;
+    font-size: 24px;
+  }
+  margin: 60px 15px;
+}
+
+.reward-detail {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  p {
+    padding-bottom: 20px;
+  }
+  .btn-redeem {
+    justify-content: center;
+  }
+}
+
+#redeem-code {
+  padding-top: 20px;
+}

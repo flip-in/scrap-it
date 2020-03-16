@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :users, only: [:edit, :update]
   resources :pickups, except: [:show]
-  resources :rewards, only: [:index]
+  resources :rewards, only: [:index, :show]
   resources :user_rewards, only: [:new]
   get '/onboarding', to: 'pages#onboarding', as: :onboarding
   # ROUTES FOR 2 DASHBOARDS
