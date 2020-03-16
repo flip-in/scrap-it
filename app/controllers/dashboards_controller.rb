@@ -1,4 +1,7 @@
 class DashboardsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:driver_dashboard]
+  before_action :authenticate_driver!, unless: :devise_controller?, only: [:driver_dashboard]
+
   def user_dashboard
     #SCHEDULE
     @user = current_user

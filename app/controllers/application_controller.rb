@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
   include Pundit
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :authenticate_user!, unless: :devise_controller?
-  # before_action :authenticate_driver!, unless: :devise_controller?
+  before_action :authenticate_user!, unless: [:devise_controller?, :drivers_controller?]
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
@@ -28,6 +27,10 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def drivers_controller?
+    params[:controller].match?(/drivers/)
+  end
 
   def skip_pundit? #
     params[:controller] !~ /pickups/

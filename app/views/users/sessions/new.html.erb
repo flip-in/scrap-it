@@ -1,5 +1,4 @@
-<h2>Log in</h2>
-<p>hi, Driver</p>
+<h2>Log up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
@@ -18,5 +17,4 @@
   </div>
 <% end %>
 
-<%= link_to "Scrapit User? Login HERE", new_user_session_path %> <br>
-<%= render "drivers/shared/links" %>
+<%= render "users/shared/links" %>

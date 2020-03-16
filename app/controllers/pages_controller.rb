@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!, only: [:home, :map]
+  before_action :authenticate_driver!, unless: :devise_controller?, only: [:map]
 
   def home
     redirect_to user_dashboard_path if current_user
