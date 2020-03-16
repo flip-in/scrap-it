@@ -4,7 +4,7 @@
 
       <%= simple_form_for UserReward.new do |f| %>
         <div class="list-container">
-          <ul class="ks-cboxtags">
+          <ul class="rewardsbox">
             <% @rewards.each do |rew| %>
               <li><input name="rewards_ids[]" type="checkbox" value="<%= rew.id%>">
               <label for="<%= rew.name %>"><%= rew.name %></label></li>
