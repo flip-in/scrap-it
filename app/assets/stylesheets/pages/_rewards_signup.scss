@@ -1,28 +1,12 @@
-.category-container{
-  h1 {
-    margin-top: 4vh;
-    padding: 1.5rem 1.5rem 1.5 1.5rem;
-  }
-
-  background-color: white;
-  height: 100vh;
-  padding: 15px;
-}
-
-
-.list-container {
-    max-width: 640px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 13px;
+.rewards-sign-up-container h1 {
+    color: #3BB8CA;
+    margin-top: 5vh;
+    margin-bottom: 4vh;
 }
 
 ul.ks-cboxtags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     list-style: none;
-    margin: 0px;
-    padding: none;
+    padding: 20px;
 }
 ul.ks-cboxtags li{
   display: inline;
@@ -50,21 +34,6 @@ ul.ks-cboxtags li label {
 
 }
 
-ul.ks-cboxtags li label::before {
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    font-family: "FontAwesome";
-    font-weight: 900;
-    font-size: 12px;
-    padding: 2px 6px 2px 2px;
-    content: "\f067";
-    transition: transform .3s ease-in-out;
-}
-
-
 // ul.ks-cboxtags li label::before {
 //     display: inline-block;
 //     font-style: normal;
@@ -78,12 +47,6 @@ ul.ks-cboxtags li label::before {
 //     content: "\f067";
 //     transition: transform .3s ease-in-out;
 // }
-
-ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
-    content: "\f00c";
-    transform: rotate(-360deg);
-    transition: transform .3s ease-in-out;
-}
 
 ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
     transform: rotate(-360deg);
@@ -104,18 +67,8 @@ ul.ks-cboxtags li input[type="checkbox"] {
 ul.ks-cboxtags li input[type="checkbox"] {
   position: absolute;
   opacity: 0;
-  width: 73vw;
+  width: 68px;
   height: 50px;
 }
 ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 }
-
-.category-submit {
-    margin-top: 4vh;
-    padding: 10px 12px;
-    width: 100%;
-    background-color:#45D4E5 ;
-    color: white;
-    font-weight: bold;
-}
-
