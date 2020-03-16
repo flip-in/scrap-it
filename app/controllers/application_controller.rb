@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include Pundit
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!, unless: :devise_controller?
+  # before_action :authenticate_driver!, unless: :devise_controller?
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
@@ -15,10 +16,14 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    if resource.user_rewards.empty?
-      '/onboarding'
+    if current_driver
+      '/driver/dashboard'
     else
-      '/dashboard'
+      if resource.user_rewards.empty?
+        '/onboarding'
+      else
+        '/dashboard'
+      end
     end
   end
 

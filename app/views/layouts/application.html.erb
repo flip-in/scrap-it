@@ -12,8 +12,8 @@
   </head>
   <body>
     <%= render 'dashboards/reward_modal' %>
-  <% if current_user %>
-    <%= render 'shared/navbar' %>
+    <% if current_user %>
+      <%= render 'shared/navbar' %>
     <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>

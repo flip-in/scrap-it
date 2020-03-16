@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'users/edit'
   get 'users/update'
-  devise_for :drivers
-  devise_for :users, controllers: { registrations: "registrations",
+  devise_for :drivers, path: 'drivers', controllers: {sessions: 'users/sessions'}
+  devise_for :users, path: 'users', controllers: { sessions: 'users/sessions', registrations: "registrations",
                                     omniauth_callbacks: 'users/omniauth_callbacks' }
 
 #   constraints lambda { |req| !req.session[:user_id].blank? } do

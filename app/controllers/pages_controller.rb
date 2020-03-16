@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     redirect_to user_dashboard_path if current_user
+    # redirect_to driver_dashboard_path if current_driver
     # landing page
   end
 
