@@ -119,14 +119,6 @@
   justify-content: center;
 }
 
-.already1 {
-  width: 5rem;
-}
-
-.already2 {
-  width: 7rem ;
-}
-
 .fb-btn {
   background-color: #3B5998;
   color: white;
@@ -152,4 +144,11 @@
   color: white;
   opacity: 0.9;
   text-align: center;
+}
+
+.driver-login{
+  a{
+    text-decoration: none;
+    color: $lightgrey;
+  }
 }

@@ -237,6 +237,14 @@ pickups = [
   notes: "Look out for the green door! You might have to push hard",
   user_id: User.first.id,
   driver_id: Driver.first.id
+  },
+  {
+  status: "pending",
+  date: Date.today + 10,
+  time_of_day: time_of_day_arr.sample,
+  notes: "Look out for the green door! You might have to push hard",
+  user_id: User.first.id,
+  driver_id: Driver.first.id
   }
   # {
   # status: "confirmed",
