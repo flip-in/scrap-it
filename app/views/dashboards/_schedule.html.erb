@@ -2,7 +2,7 @@
 
   <div class="row">
     <div class="col-md-6 px-0 mx-auto">
-      <% if @next_pickup.date == Date.today %>
+      <% if @next_pickup && @next_pickup.date == Date.today %>
         <%= render 'pickup_status' %>
       <% elsif @next_pickup %>
         <%= render 'next_pickup' %>
