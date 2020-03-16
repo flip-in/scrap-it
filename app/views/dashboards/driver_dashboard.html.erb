@@ -1,2 +1,47 @@
-<h1>Dashboards#driver_dashboard</h1>
-<p>Find me in app/views/dashboards/driver_dashboard.html.erb</p>
+<div class="container mt-4">
+  <div class="driver-controls">
+    <div class="map-button">
+      <%= link_to 'See Map', map_path, class: 'btn btn-primary' %>
+    </div>
+    <div class="scan-qr">
+      <%= link_to 'Scan QR Code', '#', class: 'btn btn-primary', id: "camera-toggle" %>
+      <input type="file" accept="image/*" capture="environment" class="d-none" id="camera-input" />
+    </div>
+  </div>
+
+  <% @pickups.each do |pickup| %>
+    <%# if pickup.status == 'complete' %>
+
+
+      <div class="card-pickup w-100 d-flex justify-content-between align-items-center">
+
+
+        <div class="card-date px-2">
+          <span class="pickup-day"><%= pickup.date.strftime("%e") %></span>
+          <span class="pickup-month"><%= pickup.date.strftime("%b").upcase %></span>
+        </div>
+
+
+        <div class="feedback user-details">
+          <div class="user-name">
+            <%= pickup.user.first_name %>
+            <%= pickup.user.last_name %>
+          </div>
+          <div class="user-address"><%= pickup.user.address %></div>
+        </div>
+
+
+        <div class="confirm-pickup">
+          <% if pickup.status == 'pending' %>
+            <%= link_to "Confirm Pickup", pickup_path(pickup, pickup: {status: "confirmed"}), method: :patch, class: 'btn btn-primary' %>
+          <% else %>
+            <button class="btn btn-secondary">Confirmed</button>
+          <% end %>
+
+        </div>
+
+
+      </div> <!-- PICKUP-CARD div -->
+    <%# end %>
+  <% end %>
+</div>

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'users/edit'
   get 'users/update'
-  devise_for :drivers
-  devise_for :users, controllers: { registrations: "registrations",
+  devise_for :drivers, path: 'drivers', controllers: {sessions: 'drivers/sessions'}
+  devise_for :users, path: 'users', controllers: { sessions: 'users/sessions', registrations: "registrations",
                                     omniauth_callbacks: 'users/omniauth_callbacks' }
 
 #   constraints lambda { |req| !req.session[:user_id].blank? } do
@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   post '/reset_rewards', to: 'rewards#reset', as: :reset_rewards
   post '/rewards', to: 'user_rewards#create', as: :user_rewards
   post '/add_user_rewards', to: 'user_rewards#add', as: :add_user_rewards
-
+  get '/qr', to: 'pages#qr', as: :qr
 
 
 
