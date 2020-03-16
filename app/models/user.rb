@@ -14,6 +14,11 @@ class User < ApplicationRecord
   validates :address, :first_name, :last_name, :phone_number, presence: true, on: :update
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  before_create :generate_code
+
+  def generate_code
+    self.qr_token = SecureRandom.hex
+  end
   
   def unavailable_dates
     pickups.pluck(:date)

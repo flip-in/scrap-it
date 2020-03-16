@@ -23,6 +23,8 @@ class DashboardsController < ApplicationController
   end
 
   def driver_dashboard
+    @driver = current_driver
+    @pickups = @driver.pickups.where("status != 'complete' AND date = ?", Date.today)
     # map
     # scan
     # review

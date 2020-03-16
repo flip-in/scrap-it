@@ -10,7 +10,6 @@ class ApplicationController < ActionController::Base
   end
   
   def after_sign_up_path_for(resource)
-    raise
     edit_user_registration_path
   end
 

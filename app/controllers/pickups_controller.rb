@@ -1,7 +1,15 @@
 class PickupsController < ApplicationController
-  after_action :authorize_pickups, except: [:index]
+  skip_before_action :authenticate_user!, only: [:update, :review]
   before_action :set_pickup, only: [:edit, :review, :update, :destroy]
+  before_action :authorize_pickups, except: [:index]
 
+  def pundit_user
+    if current_driver
+      current_driver
+    else
+      current_user
+    end
+  end
   def index
     #for the driver
     @pickups = policy_scope(Pickup).order(date: :desc)
@@ -40,7 +48,7 @@ class PickupsController < ApplicationController
   def update
     # Patch action
     # used on the review page and edit page
-    if current_user.class == Driver
+    if current_driver
       if @pickup.update(driver_pickup_params)
         redirect_to driver_dashboard_path
       else
@@ -75,7 +83,7 @@ class PickupsController < ApplicationController
   end
 
   def driver_pickup_params
-    params.require(:pickup).permit(:rating, :feedback)
+    params.require(:pickup).permit(:rating, :feedback, :status)
   end
 
 end
