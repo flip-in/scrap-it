@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_17_033230) do
+ActiveRecord::Schema.define(version: 2020_03_17_042548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -115,6 +115,7 @@ ActiveRecord::Schema.define(version: 2020_03_17_033230) do
     t.float "longitude"
     t.integer "points", default: 0
     t.integer "lifetime_points", default: 0
+    t.string "avatar"
     t.string "name"
     t.string "provider"
     t.string "uid"
