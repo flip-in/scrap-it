@@ -115,11 +115,10 @@ ActiveRecord::Schema.define(version: 2020_03_17_042548) do
     t.float "longitude"
     t.integer "points", default: 0
     t.integer "lifetime_points", default: 0
-    t.string "avatar"
+    t.string "avatar_id"
     t.string "name"
     t.string "provider"
     t.string "uid"
-    t.string "avatar_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
