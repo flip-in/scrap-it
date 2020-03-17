@@ -4,12 +4,14 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <% if current_user %>
+  <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=square", class: "avatar" %>
+  <% end %>
+
 
   <% if current_user %>
     <%#= image_tag "http://graph.facebook.com/#{@user.uid}/picture?type=square", class: "avatar" %>
   <% end %>
-                
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? || driver_signed_in? %>
