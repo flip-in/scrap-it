@@ -6,7 +6,10 @@ closeButton.addEventListener("click", ()=> {
   document.querySelector(".reward-modal-background").remove()
 })
 
+function appendCode(event){
+  document.getElementById("redeem-code").insertAdjacentHTML("afterbegin", "<%= j render 'rewards/redeem_code' , reward: @reward, user: current_user %>")
+    event.target.removeEventListener("click", appendCode)
+};
 var redeemBtn = document.querySelector(".btn-redeem");
-redeemBtn.addEventListener("click", (event)=> {
-  document.getElementById("redeem-code").insertAdjacentHTML("afterbegin", "<%= j render 'rewards/redeem_code' , reward: @reward %>")
-})
+redeemBtn.addEventListener("click", appendCode);
+
