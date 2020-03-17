@@ -1,7 +1,7 @@
 class PickupsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:update, :review]
   before_action :set_pickup, only: [:edit, :review, :update, :destroy]
-  before_action :authorize_pickups, except: [:index]
+  before_action :authorize_pickups, except: [:index, :new, :create]
 
   def pundit_user
     if current_driver
@@ -21,19 +21,20 @@ class PickupsController < ApplicationController
       redirect_to edit_user_path(current_user)
     end
     @pickup = Pickup.new
+    authorize @pickup
   end
 
   def create
     # POST action
     @pickup = Pickup.new(user_pickup_params)
     @pickup.user = current_user
+    authorize @pickup
     @pickup.save
     if current_user.pickups.length == 1
       current_user.points += 100
       current_user.lifetime_points += 100
       current_user.save
     end
-
     redirect_to user_dashboard_path
   end
 

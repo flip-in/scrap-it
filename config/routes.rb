@@ -10,7 +10,10 @@ Rails.application.routes.draw do
 # end
   root to: 'pages#home'
   resources :users, only: [:edit, :update]
-  resources :pickups, except: [:show]
+  resources :pickups, except: [:show] do 
+    member do
+    end
+  end
   resources :rewards, only: [:index, :show]
   resources :user_rewards, only: [:new]
   get '/onboarding', to: 'pages#onboarding', as: :onboarding
