@@ -1,8 +1,9 @@
-<h2>Log in</h2>
-<p>hi</p>
+<div class="big-sign-up-container pt-5">
+<div class="sign-up-container pt-5 ">
+<h1 class="signup-title ">Driver Sign In</h1>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
+  <div class="form-inputs pt-4">
     <%= f.input :email,
                 required: false,
                 autofocus: true,
@@ -13,9 +14,14 @@
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+  <div class="sign-up-button-container mt-4 mb-5">
+    <%= f.button :submit, "Log in", class:"sign-up-button"  %>
   </div>
 <% end %>
 
+<%= link_to "Scrapit User? Login HERE", new_user_session_path, class: 'linkdriver' %> <br>
 <%= render "drivers/shared/links" %>
+<p class="mt-5" style="text-align: center; padding-top: 50px;">© Scrapit Technologies 2020</p>
+
+</div>
+</div>

@@ -7,11 +7,14 @@
         <div class="redeem">
           <h4 style="font-size: 16px; color: #00A8B7; font-weight: 600;"><%= rew.point_cost %> pts</h4>
           <% if rew.point_cost <= current_user.points %>
-            <button class="btn-redeem">redeem</button>
+            <%= link_to "redeem", reward_path(rew.id), id: "first-btn-redeem", class: "btn-redeem", method: :get, remote: true %>
           <% else %>
-            <button class="grey-btn">need <%= rew.point_cost - current_user.points %> pts!</button>
+            <%= link_to reward_path(rew.id), class: "grey-btn", method: :get, remote: true do %>
+              need <%= rew.point_cost - current_user.points %> pts!
+            <% end %>
           <% end %>
         </div>
-    </div>
-    <% end %>
-  </div>
+      </div>
+  <% end %>
+</div>
+

@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rails', '5.2.4.1'
 gem 'redis'
 gem 'pundit'
+gem 'rqrcode'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
@@ -19,7 +20,6 @@ gem 'webpacker'
 gem 'faker'
 gem 'geocoder'
 gem 'omniauth-facebook'
-gem "font-awesome-rails"
 
 
 group :development do

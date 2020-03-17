@@ -6,7 +6,7 @@ class PickupPolicy < ApplicationPolicy
   end
   
   def review?
-    user.class == Driver
+    record.driver == user
   end
 
   def new?

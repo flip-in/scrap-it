@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'users/edit'
   get 'users/update'
-  devise_for :drivers
-  devise_for :users, controllers: { registrations: "registrations",
+  devise_for :drivers, path: 'drivers', controllers: {sessions: 'drivers/sessions'}
+  devise_for :users, path: 'users', controllers: { sessions: 'users/sessions', registrations: "registrations",
                                     omniauth_callbacks: 'users/omniauth_callbacks' }
 
 #   constraints lambda { |req| !req.session[:user_id].blank? } do
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :users, only: [:edit, :update]
   resources :pickups, except: [:show]
-  resources :rewards, only: [:index]
+  resources :rewards, only: [:index, :show]
   resources :user_rewards, only: [:new]
   get '/onboarding', to: 'pages#onboarding', as: :onboarding
   # ROUTES FOR 2 DASHBOARDS
@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   post '/reset_rewards', to: 'rewards#reset', as: :reset_rewards
   post '/rewards', to: 'user_rewards#create', as: :user_rewards
   post '/add_user_rewards', to: 'user_rewards#add', as: :add_user_rewards
-
+  get '/qr', to: 'pages#qr', as: :qr
 
 
 

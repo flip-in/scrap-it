@@ -1,5 +1,5 @@
 
-<% if current_user %>
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -8,11 +8,17 @@
   <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=square", class: "avatar" %>
   <% end %>
 
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
+      <% if user_signed_in? || driver_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+          <% if current_user %>
+            <%= link_to "Home", user_dashboard_path, class: "nav-link" %>
+          <% end %>
+          <% if current_driver %>
+            <%= link_to "Home", driver_dashboard_path, class: "nav-link" %>
+          <% end %>
         </li>
         <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>
@@ -32,5 +38,4 @@
     </ul>
   </div>
 </div>
-<% else %>
-<% end %>
+

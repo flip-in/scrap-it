@@ -1,4 +1,7 @@
 class DashboardsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:driver_dashboard]
+  before_action :authenticate_driver!, unless: :devise_controller?, only: [:driver_dashboard]
+
   def user_dashboard
     #SCHEDULE
     @user = current_user
@@ -20,6 +23,9 @@ class DashboardsController < ApplicationController
   end
 
   def driver_dashboard
+    @driver = current_driver
+    @pickups = @driver.pickups.where("status != 'complete' AND date = ?", Date.today)
+    @past_pickups = @driver.pickups.where("status = 'complete'").order(date: :desc)
     # map
     # scan
     # review
