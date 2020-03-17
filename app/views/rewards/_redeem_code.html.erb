@@ -1,2 +1,6 @@
 
-<p><strong>Your redeem code:</strong> <%= reward.redeem_code %></p>
+<% if user.points >= reward.point_cost %>
+  <p><strong>Your redeem code:</strong> <%= reward.redeem_code %></p>
+<% else %>
+  <p><strong>You need <%= reward.point_cost - user.points %> points to redeem this reward!</strong></p>
+<% end %>
