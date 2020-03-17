@@ -2,11 +2,12 @@
   <div class="list-container">
     <ul class="ks-cboxtags">
       <% Category.all.each do |cat| %>
-        <li><input name="categories_ids[]" type="checkbox" value="<%= cat.id%>" class="mr-4">
+        <li><input  name="categories_ids[]" type="checkbox" value="<%= cat.id%>" class="mr-4">
             <label for="<%= cat.name %>" class="checkbox"><%= cat.name %></label></li>
       <% end %>
     </ul>
-    <%= f.button :submit, "Continue", class: "category-submit" %>
+        <h1></h1>
+    <%= f.button :submit, "Continue", class: "category-submit", error: "Invalid, You must choose more at leastr 2 d" %>
   </div>
 <% end %>
 
