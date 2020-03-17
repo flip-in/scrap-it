@@ -7,7 +7,6 @@
 
 .status-circle {
   i{
-    color: white;
     font-size: 12px;
   }
   span{
@@ -18,10 +17,11 @@
     top: 25px;
     width: 40px;
     hyphens: none;
+    color: #3F9BAA;
   }
-  color: #3F9BAA;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
   border-radius: 50%;
   border: 2px solid #3F9BAA;
@@ -52,15 +52,22 @@
   }
 
 .status-inactive {
+  
   border-color: #C4C4C4;
   background: $white;
 }
 
 .status-active {
+  i {
+    color: $midgrey !important;
+  }
   background: $white;
   border-color: #3F9BAA;
 }
 
 .status-done {
+  i {
+    color: white;
+  }
   background: #3F9BAA;
 }

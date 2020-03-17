@@ -25,6 +25,7 @@ class DashboardsController < ApplicationController
   def driver_dashboard
     @driver = current_driver
     @pickups = @driver.pickups.where("status != 'complete' AND date = ?", Date.today)
+    @past_pickups = @driver.pickups.where("status = 'complete'").order(date: :desc)
     # map
     # scan
     # review
