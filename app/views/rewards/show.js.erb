@@ -1,3 +1,4 @@
+
 var body = document.querySelector("body")
 body.insertAdjacentHTML("afterbegin", "<%= j render 'rewards/reward_modal' , reward: @reward, user: current_user %>")
 var closeButton = document.querySelector(".close-reward")
@@ -5,7 +6,7 @@ closeButton.addEventListener("click", ()=> {
   document.querySelector(".reward-modal-background").remove()
 })
 
-const redeemBtn = document.querySelector(".btn-redeem");
+var redeemBtn = document.querySelector(".btn-redeem");
 redeemBtn.addEventListener("click", (event)=> {
   document.getElementById("redeem-code").insertAdjacentHTML("afterbegin", "<%= j render 'rewards/redeem_code' , reward: @reward %>")
 })

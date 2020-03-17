@@ -3,10 +3,6 @@
     <div class="map-button">
       <%= link_to 'See Map', map_path, class: 'btn btn-primary' %>
     </div>
-    <div class="scan-qr">
-      <%= link_to 'Scan QR Code', '#', class: 'btn btn-primary', id: "camera-toggle" %>
-      <input type="file" accept="image/*" capture="environment" class="d-none" id="camera-input" />
-    </div>
   </div>
 
   <% @pickups.each do |pickup| %>
