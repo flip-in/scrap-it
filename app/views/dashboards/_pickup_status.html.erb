@@ -5,20 +5,38 @@
   </div>
   <div class="status-container">
     <div class="status-circle status-done">
-      <%# <i class="fas fa-check"></i> %>
+      <i class="fas fa-check"></i>
       <span><em>Booked!</em></span>
     </div>
-    <div class="status-line status-active"></div>
-    <div class="status-circle status-active">
-      <!-- Icon -->
-      <span>Scrapit en&#8209route</span>
-    </div>
-    <div class="status-line status-inactive"></div>
-    <div class="status-circle status-inactive">
-      <!-- Icon -->
-      <span>Picked up</span>
-    </div>
-    <div class="status-line status-inactive"></div>
+
+    <% if @next_pickup.status == 'reviewing' || @next_pickup.status == 'confirmed' %>
+      <div class="status-line status-active"></div>
+      <div class="<%= @next_pickup.status == 'confirmed' ? 'status-circle status-done' : 'status-circle status-active' %>">
+       <i class="fas fa-check <%= @next_pickup.status == 'confirmed' ? 'status-done' : 'status-active' %>"></i>
+        <span>Scrapit en&#8209route</span>
+      </div>
+    <% elsif @next_pickup.status == 'pending' %>
+      <div class="status-line status-active"></div>
+      <div class="status-circle status-inactive">
+        <i class="fas fa-check <%= @next_pickup.status == 'confirmed' ? 'status-done' : 'status-active' %>"></i>
+        <span>Scrapit en&#8209route</span>
+      </div>
+    <% end %>
+    <% if @next_pickup.status == 'reviewing' || @next_pickup.status == 'confirmed' %>
+      <div class="<%= @next_pickup.status == 'confirmed' ? 'status-line status-active' : 'status-line status-inactive' %>"></div>
+      <div class="<%= @next_pickup.status == 'reviewing' ? 'status-circle status-done' : 'status-circle status-active' %>">
+        <i class="fas fa-check <%= @next_pickup.status == 'reviewing' ? 'status-done' : 'status-active' %>"></i>
+        <span>Picked up</span>
+      </div>
+      <% elsif @next_pickup.status == 'pending' %>
+      <div class="status-line status-inactive"></div>
+      <div class="status-circle status-inactive">
+        <i class="fas fa-check <%= @next_pickup.status == 'reviewing' ? 'status-done' : 'status-active' %>"></i>
+        <span>Picked up</span>
+      </div>
+    <% end %>
+
+    <div class="<%= @next_pickup.status == 'reviewing' ? 'status-line status-active' : 'status-line status-inactive' %>"></div>
     <div class="status-circle-big status-inactive">
       <%= image_tag 'thumbsup-grey.png', size: '32x32' %>
       <span>+25</span>
