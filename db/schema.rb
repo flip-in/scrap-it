@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_13_084924) do
+ActiveRecord::Schema.define(version: 2020_03_17_015553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2020_03_13_084924) do
   create_table "rewards", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.integer "point_cost"
+    t.integer "point_cost", default: 0
     t.string "redeem_code"
     t.integer "amount"
     t.bigint "category_id"
@@ -115,9 +115,10 @@ ActiveRecord::Schema.define(version: 2020_03_13_084924) do
     t.float "longitude"
     t.integer "points", default: 0
     t.integer "lifetime_points", default: 0
+    t.string "name"
     t.string "provider"
     t.string "uid"
-    t.string "name"
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
