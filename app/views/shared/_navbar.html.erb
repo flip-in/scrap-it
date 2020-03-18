@@ -5,10 +5,10 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <% if current_user && current_user.uid != nil %>
-  <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=square", class: "avatar" %>
+
+    <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=square", class: "avatar" %>
   <% else %>
-  <% raise %>
-  <%= image_tag "ScrapitSteve.jpeg", class: "avatar" %>
+    <%= image_tag "ScrapitSteve.jpeg", class: "avatar" %>
   <% end %>
 
   <% if current_user %>
