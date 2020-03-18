@@ -1,33 +1,31 @@
 <div class="container mt-4">
-
   <div class="driver-pickup-card card">
     <h3>How'd they scrap?</h3>
-
-    <div class="icons">
-
-  <%= form_tag pickup_path(@pickup), method: :patch  do %>
-    <%= hidden_field_tag 'pickup[rating]', true %>
+      <div class="icons">
+  <%= form_tag approve_pickup_path(@pickup), method: :patch, remote: true  do %>
     <%= button_tag do  %>
       <div class="thumbs-up">
-        <button id="good-scrap"> 
           <%= image_tag "thumbsup.png", size: '90x90' %>
-        </button>
       </div>
     <% end %>
   <% end %>
+
+  <%= form_tag disapprove_pickup_path(@pickup), method: :patch, remote: true do %>
+    <%= button_tag do %>
       <div class="thumbs-down">
-        <button id="bad-scrap">
           <%= image_tag "thumbsdown.png", size: '90x90' %>
-        </button>
       </div>
+    <% end %>
+  <% end %>
+
 
     </div>
-    <div class="container">
-      <div class="woohoo-check">
-        <%= image_tag 'review_check.svg' %>
-        <span id='woohoo'>Whoohoo!</span>
-        <%= link_to 'Send Feedback and Continue Pickup Route', driver_dashboard_path, method: :patch %>
-      </div>
+    <div class="container" id="approve-response-container">
+      <!-- AJAX Response -->
+    </div>
+
+    <div class="container" id="disapprove-response-container">
+      <!-- AJAX Response -->
     </div>
   </div>
 </div>

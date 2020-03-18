@@ -1,0 +1,7 @@
+<p>What can be improved?</p>
+
+
+<%= simple_form_for pickup, url: feedback_pickup_path, method: :patch do |f| %>
+  <%= f.collection_check_boxes :feedback, [["Feedback 1", 'Feedback 1'], ["Feedback 2", 'Feedback 2'], ["Feedback 3", "Feedback 3"]], :first, :last  %>
+  <%= f.submit 'Submit',  class: 'btn btn-primary' %>
+<% end %>

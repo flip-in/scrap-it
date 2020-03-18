@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 # end
   root to: 'pages#home'
   resources :users, only: [:edit, :update]
-  resources :pickups, except: [:show] do 
+  resources :pickups, except: [:show] do
     member do
     end
   end
@@ -33,13 +33,12 @@ Rails.application.routes.draw do
   post '/rewards', to: 'user_rewards#create', as: :user_rewards
   post '/add_user_rewards', to: 'user_rewards#add', as: :add_user_rewards
   get '/qr', to: 'pages#qr', as: :qr
-
-
-
-
   # FOR DRIVER TO REVIEW A PICKUP
   # TODO: Trigger callback function on USER Model for checking eligibility of badges
   get '/pickups/:id/review', to: 'pickups#review', as: :review_pickup
+  patch '/pickups/:id/approve', to: 'pickups#approve', as: :approve_pickup
+  patch '/pickups/:id/disapprove', to: 'pickups#disapprove', as: :disapprove_pickup
+  patch '/pickups/:id/feedback', to: 'pickups#feedback', as: :feedback_pickup
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

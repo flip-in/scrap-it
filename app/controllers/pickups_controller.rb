@@ -1,7 +1,7 @@
 class PickupsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:update, :review]
-  before_action :set_pickup, only: [:edit, :review, :update, :destroy]
-  before_action :authorize_pickups, except: [:index, :new, :create]
+  skip_before_action :authenticate_user!, only: [:update, :review, :approve, :disapprove, :feedback]
+  before_action :set_pickup, only: [:edit, :review, :update, :destroy, :approve, :disapprove, :feedback]
+  before_action :authorize_pickups, except: [:index, :new, :create, :approve, :disapprove, :feedback]
 
   def pundit_user
     if current_driver
@@ -46,21 +46,42 @@ class PickupsController < ApplicationController
     # FOR THE DRIVER TO REVIEW THE PICKUP
   end
 
+  def approve
+    authorize @pickup
+    @pickup.rating = true
+    @pickup.save
+    respond_to do |format|
+        format.html { redirect_to driver_dashboard_path }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+  end
+
+  def disapprove
+    authorize @pickup
+    @pickup.rating = false
+    @pickup.save
+    respond_to do |format|
+      format.html { redirect_to driver_dashboard_path }
+      format.js
+    end
+  end
+
+  def feedback
+    @pickup.feedback = params[:pickup][:feedback][1..-1].join("/")
+    # "Feedback 2/Feedback 3" -- split in the view
+    authorize @pickup
+    @pickup.save
+    redirect_to driver_dashboard_path
+  end
+
+
   def update
     # Patch action
     # used on the review page and edit page
-    if current_driver
-      if @pickup.update(driver_pickup_params)
-        redirect_to driver_dashboard_path
-      else
-        render 'review'
-      end
+    if @pickup.update(user_pickup_params)
+      redirect_to user_dashboard_path
     else
-      if @pickup.update(user_pickup_params)
-        redirect_to user_dashboard_path
-      else
-        render 'edit'
-      end
+      render 'edit'
     end
   end
 
