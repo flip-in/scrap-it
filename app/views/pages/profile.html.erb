@@ -1,0 +1,33 @@
+  <div class="profile_page_container">
+  <div class="welcome_container">
+  <h1 class="mr-2 hello">Hello,</h1>
+  <h1 class="hello"><%= current_user.first_name %></p>
+  </div>
+    <h4 class="subprofile">Your profile informations :</h4>  
+  <div class="profile_email_container">
+    <h5 class="mr-2 profile_email">Email : </h5><%=current_user.email %>
+  </div>
+  <div class="profile_container">
+    <h5 class="mr-2">First name : </h5><%=current_user.first_name %>
+  </div>
+  <div class="profile_container">
+    <h5 class="mr-2">Last name : </h5><%=current_user.last_name %>
+  </div>
+  <div class="profile_container">
+    <h5 class="mr-2">Email : </h5><%=current_user.email %>
+  </div>
+  <div class="profile_container">
+    <h5 class="mr-2">Address : </h5><%=current_user.address %>
+  </div>
+  <div class="profile_container last_profile">
+    <h5 class="mr-2">Phone number : </h5><%=current_user.phone_number %>
+  </div>
+    <%= link_to "Edit your profile", users_edit_path, class: "profile_edit_btn" %>
+
+  </div>
+
+
+  <%# <%= raise %> %>
+
+
+

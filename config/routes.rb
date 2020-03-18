@@ -40,5 +40,6 @@ Rails.application.routes.draw do
   patch '/pickups/:id/disapprove', to: 'pickups#disapprove', as: :disapprove_pickup
   patch '/pickups/:id/feedback', to: 'pickups#feedback', as: :feedback_pickup
   get '/about', to: 'pages#about', as: :about
+  get 'profile', to: 'pages#profile', as: :profile
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

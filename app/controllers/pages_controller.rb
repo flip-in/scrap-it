@@ -19,6 +19,9 @@ class PagesController < ApplicationController
   def about
   end
 
+  def profile
+  end
+
   def qr
     @user = User.find(params[:user_id])
     @current_pickup = @user.pickups.where('date = ?', Date.today)[0]
