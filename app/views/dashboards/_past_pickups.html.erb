@@ -16,7 +16,9 @@
         <div class="feedback">
           <% if pickup.feedback %>
             <div class="card-feedback">
-              <%= pickup.feedback %>
+              <% pickup.feedback.split("/").each do |feedback| %>
+              <%= feedback%><br>
+              <% end %>
             </div>
           <% end %>
         </div>

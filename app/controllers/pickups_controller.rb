@@ -49,6 +49,7 @@ class PickupsController < ApplicationController
   def approve
     authorize @pickup
     @pickup.rating = true
+    @pickup.status = 'complete'
     @pickup.save
     respond_to do |format|
         format.html { redirect_to driver_dashboard_path }
@@ -69,6 +70,8 @@ class PickupsController < ApplicationController
   def feedback
     @pickup.feedback = params[:pickup][:feedback][1..-1].join("/")
     # "Feedback 2/Feedback 3" -- split in the view
+    @pickup.status = params[:pickup][:status]
+
     authorize @pickup
     @pickup.save
     redirect_to driver_dashboard_path
@@ -77,11 +80,19 @@ class PickupsController < ApplicationController
 
   def update
     # Patch action
-    # used on the review page and edit page
-    if @pickup.update(user_pickup_params)
-      redirect_to user_dashboard_path
+    # used on the driver dashboard page and edit page
+    if current_driver
+      if @pickup.update(driver_pickup_params)
+        redirect_to driver_dashboard_path
+      else
+        render 'review'
+      end
     else
-      render 'edit'
+      if @pickup.update(user_pickup_params)
+        redirect_to user_dashboard_path
+      else
+        render 'edit'
+      end
     end
   end
 
