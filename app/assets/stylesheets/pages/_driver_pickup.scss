@@ -5,9 +5,8 @@
   }
   .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    flex-direction: column;
+
   }
   height: 86vh;
   display: flex;
@@ -32,4 +31,35 @@
   img{
     border-color: $orange !important;
   }
+}
+
+.woohoo-check{
+  #woohoo{
+    margin-top: 25px;
+    color: $aqua;
+    font-size: 34px;
+  }
+  #feedback-sent{
+    margin-top: 15px;
+    color: $midgrey;
+    font-size: 13px;
+  }
+  .btn{
+    margin-top: 20px;
+  }
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#approve-response-container{
+  justify-content: center;
+  align-items: center;
+  padding: 10vh 10px;
+}
+
+#disapprove-response-container {
+  align-items: start;
+  padding: 10px 40px;
 }
