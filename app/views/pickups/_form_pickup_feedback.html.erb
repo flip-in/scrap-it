@@ -1,8 +1,15 @@
 <p>What can be improved?</p>
 
-
 <%= simple_form_for pickup, url: feedback_pickup_path, method: :patch do |f| %>
-  <%= f.collection_check_boxes :feedback, [["Feedback 1", 'Feedback 1'], ["Feedback 2", 'Feedback 2'], ["Feedback 3", "Feedback 3"]], :first, :last  %>
+  <% ["Bin was not easy to find", "Non-compostable items in bin", "Didn’t use a compostable bag"].each do |feedback| %>
+    <div class="form-check">
+      <input name="pickup[feedback][]"class="form-check-input" type="checkbox" value="<%= feedback %>" id="<%= feedback %>">
+      <label class="form-check-label" for="<%= feedback %>">
+        <%= feedback %>
+      </label>
+    </div>
+  <% end %>  
   <%= f.hidden_field :status, value: "complete" %>
-  <%= f.submit 'Submit',  class: 'btn btn-primary' %>
+  <%= f.submit 'Submit',  class: 'btn btn-primary w-100' %>
 <% end %>
+

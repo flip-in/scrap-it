@@ -1,5 +1,6 @@
 <div class="woohoo-check">
   <%= image_tag 'review_check.svg' %>
   <span id='woohoo'>Whoohoo!</span>
-  <%= link_to 'Send Feedback and Continue Pickup Route', driver_dashboard_path %>
+  <span id='feedback-sent'>Your feedback was sent</span>
+  <%= link_to 'Continue Pickup Route', driver_dashboard_path, class: 'btn btn-primary' %>
 </div>

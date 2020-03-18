@@ -68,7 +68,7 @@ class PickupsController < ApplicationController
   end
 
   def feedback
-    @pickup.feedback = params[:pickup][:feedback][1..-1].join("/")
+    @pickup.feedback = params[:pickup][:feedback].join("/")
     # "Feedback 2/Feedback 3" -- split in the view
     @pickup.status = params[:pickup][:status]
 
