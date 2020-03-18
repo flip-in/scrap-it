@@ -1,2 +1,31 @@
-<h1>Pickups#review</h1>
-<p>Find me in app/views/pickups/review.html.erb</p>
+<div class="container mt-4">
+  <div class="driver-pickup-card card">
+    <h3>How'd they scrap?</h3>
+      <div class="icons">
+  <%= form_tag approve_pickup_path(@pickup), method: :patch, remote: true  do %>
+    <%= button_tag do  %>
+      <div class="thumbs-up">
+          <%= image_tag "thumbsup.png", size: '90x90' %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <%= form_tag disapprove_pickup_path(@pickup), method: :patch, remote: true do %>
+    <%= button_tag do %>
+      <div class="thumbs-down">
+          <%= image_tag "thumbsdown.png", size: '90x90' %>
+      </div>
+    <% end %>
+  <% end %>
+
+
+    </div>
+    <div class="container" id="approve-response-container">
+      <!-- AJAX Response -->
+    </div>
+
+    <div class="container" id="disapprove-response-container">
+      <!-- AJAX Response -->
+    </div>
+  </div>
+</div>
