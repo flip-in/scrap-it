@@ -48,8 +48,11 @@ class PickupsController < ApplicationController
 
   def approve
     authorize @pickup
+    @pickup.user.lifetime_points += 25
+    @pickup.user.points += 25
     @pickup.rating = true
     @pickup.status = 'complete'
+    @pickup.user.save
     @pickup.save
     respond_to do |format|
         format.html { redirect_to driver_dashboard_path }
