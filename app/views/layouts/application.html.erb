@@ -3,11 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable"  content="yes">
     <title>Scrapit - Compost Simplified</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= render 'shared/ios_pwa_links' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
