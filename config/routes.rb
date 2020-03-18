@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   post '/reset_rewards', to: 'rewards#reset', as: :reset_rewards
   post '/rewards', to: 'user_rewards#create', as: :user_rewards
   post '/add_user_rewards', to: 'user_rewards#add', as: :add_user_rewards
-  get '/qr', to: 'pages#qr', as: :qr
+  get '/qr/:user_id', to: 'pages#qr', as: :qr
   # FOR DRIVER TO REVIEW A PICKUP
   # TODO: Trigger callback function on USER Model for checking eligibility of badges
   get '/pickups/:id/review', to: 'pickups#review', as: :review_pickup

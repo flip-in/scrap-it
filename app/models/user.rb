@@ -16,6 +16,10 @@ class User < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   before_create :generate_code
 
+  def set_qr
+    RQRCode::QRCode.new(" http://465207f4.ngrok.io#{Rails.application.routes.url_helpers.qr_path(id)}")
+  end
+
   def generate_code
     self.qr_token = SecureRandom.hex
   end

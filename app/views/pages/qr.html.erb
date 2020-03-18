@@ -1,6 +1,4 @@
-  <% if @pickups %>
-    <% svg = RQRCode::QRCode.new(" http://465207f4.ngrok.io#{review_pickup_path(@pickups[0].id)}").as_svg %>
-  <% end %>
+  <% svg = @current_pickup.user.set_qr.as_svg %>
   <div class="container mr-5 mb-5">
     <%= svg.html_safe %>
   </div>
