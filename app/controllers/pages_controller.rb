@@ -19,6 +19,9 @@ class PagesController < ApplicationController
   def about
   end
 
+  def profile
+  end
+
   def qr
     @driver = current_driver
     @pickups = @driver.pickups.where("status != 'complete' AND date = ?", Date.today)
