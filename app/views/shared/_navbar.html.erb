@@ -6,7 +6,6 @@
   </button>
   <% if current_user && current_user.avatar_id != nil %>
   <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=square", class: "avatar" %>
-  <% raise %>
   <% else %>
   <%= image_tag "ScrapitSteve.jpeg", class: "avatar" %>
   <% end %>
