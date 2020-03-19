@@ -121,6 +121,11 @@
 
 .reward-container {
 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 9px;
+
   &.card-colored {
     height: 122px;
     margin-top: -15px;
@@ -129,20 +134,22 @@
     // top: 133px;
     // display: none;
   }
-  display: flex;
 }
 
 .reward-container-text {
   p{
     color: #066E77;
-    // margin-bottom: 0;
+  margin: 0;
   }
   span{
-    padding: 4px;
     font-size: 17px;
     font-weight: 700;
   }
-  padding: 2px 0px 4px 4px;
+  
+  width: 60%;
+  padding: 10px;
+  padding-left: 0px;
+  word-break: break-word;
 }
 
 .reward-progress-card {
@@ -150,9 +157,14 @@
     color: #089AA9;
     font-size: 10px;
   }
+
   text-align: center;
-  background-color: $white;
+  background-color: white;
   height: 80%;
-  width: 40%;
+  padding: 0 12px;
   border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
