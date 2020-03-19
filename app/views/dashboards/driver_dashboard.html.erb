@@ -7,41 +7,37 @@
       <%= link_to 'See Map', map_path, class: 'btn btn-primary' %>
     </div>
   </div>
+  <span>Your pickups for today</span>
+    <% if @pickups %>
+      <% @pickups.each do |pickup| %>
+          <div class="driver-current-pickups pr-2 w-100 d-flex justify-content-between align-items-center">
+            <div class="card-date px-2">
+              <span class="pickup-day"><%= pickup.date.strftime("%e") %></span>
+              <span class="pickup-month"><%= pickup.date.strftime("%b").upcase %></span>
+            </div>
 
-  <% @pickups.each do |pickup| %>
-    <%# if pickup.status == 'complete' %>
+            <div class="feedback user-details">
+              <div class="user-name">
+                <%= pickup.user.first_name %>
+                <%= pickup.user.last_name %>
+              </div>
+              <div class="user-address"><%= pickup.user.address.truncate(35) %></div>
+            </div>
 
+            <div class="confirm-pickup">
+              <% if pickup.status == 'pending' %>
+                <%= link_to "Confirm Pickup", pickup_path(pickup, pickup: {status: "confirmed"}), method: :patch, class: 'btn btn-primary' %>
+              <% else %>
+                <button class="btn btn-secondary">Confirmed</button>
+              <% end %>
 
-      <div class="card-pickup w-100 d-flex justify-content-between align-items-center">
+            </div>
 
-
-        <div class="card-date px-2">
-          <span class="pickup-day"><%= pickup.date.strftime("%e") %></span>
-          <span class="pickup-month"><%= pickup.date.strftime("%b").upcase %></span>
-        </div>
-
-
-        <div class="feedback user-details">
-          <div class="user-name">
-            <%= pickup.user.first_name %>
-            <%= pickup.user.last_name %>
-          </div>
-          <div class="user-address"><%= pickup.user.address %></div>
-        </div>
-
-        <div class="confirm-pickup">
-          <% if pickup.status == 'pending' %>
-            <%= link_to "Confirm Pickup", pickup_path(pickup, pickup: {status: "confirmed"}), method: :patch, class: 'btn btn-primary' %>
-          <% else %>
-            <button class="btn btn-secondary">Confirmed</button>
-          <% end %>
-
-        </div>
-
-
-      </div> <!-- PICKUP-CARD div -->
-    <%# end %>
-  <% end %>
+          </div> <!-- PICKUP-CARD div -->
+        <%# end %>
+      <% end %>
+    <% end %>
+  
   <h3>Your Past Pickups:</h3>
   <% if @past_pickups.any? %>
   <% @past_pickups.each do |pickup| %>
