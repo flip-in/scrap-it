@@ -214,7 +214,7 @@ pickups = [
   },
   {
   status: "complete",
-  date: Date.today - 24,
+  date: Date.today - 26,
   time_of_day: time_of_day_arr.sample,
   rating: true,
   feedback: feedback_arr.sample,
@@ -272,7 +272,7 @@ pickups = [
   date: Date.today - 2,
   time_of_day: time_of_day_arr.sample,
   notes: "Look out for the green door! You might have to push hard",
-  rating: true,
+  rating: false,
   user_id: User.first.id,
   driver_id: Driver.first.id
   },
