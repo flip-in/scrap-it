@@ -17,14 +17,12 @@
 }
 
 .map-btn-container {
-    margin-bottom: 5vh;
-    margin-left: 5vw;
-    padding-top: 7vh;
+    margin: 20px 15px 20px 15px;
 }
 #map {
     position: absolute;
     width: 375px;
     height: 595px;
-    border: 3px solid #498C8A;
-    border-radius: 12px;
+    border: 1px solid #498C8A;
+    border-radius: 5px;
   }
