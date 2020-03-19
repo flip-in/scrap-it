@@ -29,7 +29,6 @@
           <div class="user-address"><%= pickup.user.address %></div>
         </div>
 
-
         <div class="confirm-pickup">
           <% if pickup.status == 'pending' %>
             <%= link_to "Confirm Pickup", pickup_path(pickup, pickup: {status: "confirmed"}), method: :patch, class: 'btn btn-primary' %>
