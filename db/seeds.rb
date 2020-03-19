@@ -256,7 +256,7 @@ pickups = [
   time_of_day: time_of_day_arr.sample,
   notes: "There might be some maintenance going on in the basement today.",
   rating: false,
-  feedback: feedback_arr.sample,
+  feedback: feedback_arr.sample(2),
   user_id: User.first.id,
   driver_id: Driver.first.id
   },
@@ -266,7 +266,7 @@ pickups = [
   time_of_day: time_of_day_arr.sample,
   notes: "Look out for the green door! You might have to push hard",
   rating: false,
-  feedback: feedback_arr.sample,
+  feedback: feedback_arr.sample(1),
   user_id: User.first.id,
   driver_id: Driver.first.id
   },
@@ -283,7 +283,7 @@ pickups = [
   date: Date.today - 14,
   time_of_day: time_of_day_arr.sample,
   rating: false,
-  feedback: feedback_arr.sample,
+  feedback: feedback_arr.sample(3),
   user_id: User.first.id,
   driver_id: Driver.first.id
   },
