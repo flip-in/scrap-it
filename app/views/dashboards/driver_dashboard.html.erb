@@ -1,11 +1,8 @@
-<div class="container driver-dashboard">
+<div class="container driver-dashboard ">
   <div class="driver-controls">
     <div class="driver-welcome">
-      <h4>Welcome, <%= current_driver.first_name %></h4>
+      <h3 class=" driver_title ">Welcome, <%= current_driver.first_name %></h3>
     </div>  
-    <div class="map-button">
-      <%= link_to 'See Map', map_path, class: 'btn btn-primary' %>
-    </div>
   </div>
 
   <% @pickups.each do |pickup| %>
@@ -43,7 +40,7 @@
       </div> <!-- PICKUP-CARD div -->
     <%# end %>
   <% end %>
-  <h3>Your Past Pickups:</h3>
+  <h3 class="driver_subtitle mb-4 ">Here are your past pickups :</h3>
   <% if @past_pickups.any? %>
   <% @past_pickups.each do |pickup| %>
     <% if pickup.status == 'complete' %>
@@ -90,4 +87,7 @@
     </div>
   </div>
 <% end %>
+    <div class="map-button mt-4">
+      <%= link_to 'Go for a ride !', map_path, class: 'btn btn-primary driver_button' %>
+    </div>
 </div>

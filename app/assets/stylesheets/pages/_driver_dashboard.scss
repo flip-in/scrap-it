@@ -1,12 +1,13 @@
 .driver-dashboard{
+  background-color: white;
+  height: 100vh;
   h3{
-    font-weight: 500;
+    font-weight: 600;
   }
   h4{
     margin-bottom: 0 !important;
     font-size: 1.3rem;
   }
-  margin-top: 15px;
 
 }
 
@@ -20,6 +21,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+.driver_subtitle {
+
+}
+
+.driver-welcome {
+  margin-top: 5vh;
+
+}
+
+.driver_title {
+  font-size: 6vh;
+  color: #45D4E5;
+}
+
+.driver_button {
+  font-size: 22px;
+  width: 55%;
+  height: 44%;
+  margin-top: 1vh;
 }
 
