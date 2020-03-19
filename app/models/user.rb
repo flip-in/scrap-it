@@ -17,7 +17,7 @@ class User < ApplicationRecord
   before_create :generate_code
 
   def set_qr
-    RQRCode::QRCode.new(" http://465207f4.ngrok.io#{Rails.application.routes.url_helpers.qr_path(id)}")
+    RQRCode::QRCode.new(" https://scrapitapp.herokuapp.com/#{Rails.application.routes.url_helpers.qr_path(id)}")
   end
 
   def generate_code
