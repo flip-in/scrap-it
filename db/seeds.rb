@@ -199,7 +199,6 @@ pickups = [
   date: Date.today - 20,
   time_of_day: time_of_day_arr.sample,
   rating: true,
-  feedback: feedback_arr.sample,
   user_id: User.first.id,
   driver_id: Driver.first.id
   },
@@ -208,7 +207,6 @@ pickups = [
   date: Date.today - 24,
   time_of_day: time_of_day_arr.sample,
   rating: true,
-  feedback: feedback_arr.sample,
   user_id: User.first.id,
   driver_id: Driver.first.id
   },
@@ -217,7 +215,6 @@ pickups = [
   date: Date.today - 26,
   time_of_day: time_of_day_arr.sample,
   rating: true,
-  feedback: feedback_arr.sample,
   user_id: User.first.id,
   driver_id: Driver.first.id
   },
@@ -226,7 +223,6 @@ pickups = [
   date: Date.today - 28,
   time_of_day: time_of_day_arr.sample,
   rating: true,
-  feedback: feedback_arr.sample,
   user_id: User.first.id,
   driver_id: Driver.first.id
   },
@@ -235,7 +231,6 @@ pickups = [
   date: Date.today - 32,
   time_of_day: time_of_day_arr.sample,
   rating: true,
-  feedback: feedback_arr.sample,
   user_id: User.first.id,
   driver_id: Driver.first.id
   },
@@ -244,7 +239,6 @@ pickups = [
   date: Date.today - 36,
   time_of_day: time_of_day_arr.sample,
   rating: true,
-  feedback: feedback_arr.sample,
   user_id: User.first.id,
   driver_id: Driver.first.id
   },
@@ -253,7 +247,6 @@ pickups = [
   date: Date.today - 38,
   time_of_day: time_of_day_arr.sample,
   rating: true,
-  feedback: feedback_arr.sample,
   user_id: User.first.id,
   driver_id: Driver.first.id
   },
@@ -273,6 +266,7 @@ pickups = [
   time_of_day: time_of_day_arr.sample,
   notes: "Look out for the green door! You might have to push hard",
   rating: false,
+  feedback: feedback_arr.sample,
   user_id: User.first.id,
   driver_id: Driver.first.id
   },
