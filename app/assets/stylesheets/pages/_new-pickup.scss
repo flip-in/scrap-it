@@ -2,8 +2,11 @@
   display: none;
 }
 
-#pickup-booking-dates {
+.pickup-booking-dates {
   display: flex;
   flex-direction: column;
   align-items: center;
+  .form-group {
+    margin-top: 20px;
+  }
 }
