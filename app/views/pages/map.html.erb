@@ -1,5 +1,7 @@
-<h1>Pages#map</h1>
-<p>Find me in app/views/pages/map.html.erb</p>
+<div class="map-container">
+  <div class="map-btn-container">
+    <%= link_to "Go back", driver_dashboard_path, class: "map_btn" %>
+  </div>
 <div
   id="map"
   style="width: 100%;
@@ -7,4 +9,7 @@
   data-markers="<%= @markers.to_json %>"
 
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+
 ></div>
+  <p class="mt-2" style="text-align: center; padding-top: 50px;">© Scrapit Technologies 2020</p>
+  </div>  
