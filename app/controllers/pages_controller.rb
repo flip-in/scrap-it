@@ -9,6 +9,15 @@ class PagesController < ApplicationController
   end
 
   def map
+    @driver = current_driver
+    @pickups = @driver.pickups.where("status != 'complete' AND date = ?", Date.today)
+    @markers = @pickups.map do |pickup|
+      {
+        lat: pickup.user.latitude,
+        lng: pickup.user.longitude
+      }
+      # raise
+    end
     # map for driver
   end
 
