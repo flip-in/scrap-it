@@ -85,7 +85,6 @@
     width: 3fr;
   }
   background-color: $white;
-  display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
@@ -112,6 +111,10 @@
     box-shadow: 1px 4px 4px 0px rgba(239, 239, 241, 1);
   }
 
+  .btn-redeem{
+    width: 100%;
+  }
+
   max-width: 30%;
   margin: 0px;
 }
@@ -127,11 +130,12 @@
 
   a {
     color: $midgrey;
-    padding-left: 15px;
+    padding: 5px 10px;
   }
 
   .btn-redeem {
     color: white !important;
+    text-align: center;
   }
 
   display: flex;
