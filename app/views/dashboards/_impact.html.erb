@@ -2,7 +2,7 @@
  <div class="card-impact">
     <div class="card-impact-top">
       <div class="impact-avatar">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+        <%= image_tag "ScrapitSteve.jpeg", class: "avatar" %>
       </div>
       <div class="impact-title">
         <p><strong>You're a rockstar, <%= current_user.first_name%>!</strong></p>
@@ -31,7 +31,6 @@
         <% end %>
       </div>
       <div class="card-badges-top">
-        <!-- Remember to replace Badge.all by @user_badges -->
         <% current_user.badges.each do |badge| %>
           <div class="badge-earned">
             <%= image_tag "#{badge.name}.png", class: "avatar" %>
