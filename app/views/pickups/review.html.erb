@@ -3,7 +3,7 @@
     <h3>How'd they scrap?</h3>
       <div class="icons">
   <%= form_tag approve_pickup_path(@pickup), method: :patch, remote: true  do %>
-    <%= button_tag do  %>
+    <%= button_tag class: "review-button" do  %>
       <div class="thumbs-up">
           <%= image_tag "thumbsup.png", size: '90x90' %>
       </div>
@@ -11,7 +11,7 @@
   <% end %>
 
   <%= form_tag disapprove_pickup_path(@pickup), method: :patch, remote: true do %>
-    <%= button_tag do %>
+    <%= button_tag class: "review-button" do %>
       <div class="thumbs-down">
           <%= image_tag "thumbsdown.png", size: '90x90' %>
       </div>
