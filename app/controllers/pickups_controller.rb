@@ -54,9 +54,9 @@ class PickupsController < ApplicationController
     @pickup.status = 'complete'
     @pickup.user.save
     @pickup.save
-    Badge.where('points <= ?', current_user.lifetime_points).each do |badge|
-      unless current_user.badges.include?(badge)
-      UserBadge.create!(user: current_user, badge: badge)
+    Badge.where('points <= ?', @pickup.user.lifetime_points).each do |badge|
+      unless @pickup.user.badges.include?(badge)
+      UserBadge.create!(user: @pickup.user, badge: badge)
       end
     end
     respond_to do |format|
