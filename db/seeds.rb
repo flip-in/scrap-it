@@ -24,8 +24,8 @@ User.create!(
   last_name: "Goode",
   latitude: 40.721223,
   longitude: -73.980769,
-  points: 300,
-  lifetime_points: 1_250,
+  points: 275,
+  lifetime_points: 375,
   )
 
 Driver.create!(
@@ -196,6 +196,69 @@ status_arr = ["Pending", "Confirmed", "Completed"]
 pickups = [
   {
   status: "complete",
+  date: Date.today - 20,
+  time_of_day: time_of_day_arr.sample,
+  rating: true,
+  feedback: feedback_arr.sample,
+  user_id: User.first.id,
+  driver_id: Driver.first.id
+  },
+  {
+  status: "complete",
+  date: Date.today - 24,
+  time_of_day: time_of_day_arr.sample,
+  rating: true,
+  feedback: feedback_arr.sample,
+  user_id: User.first.id,
+  driver_id: Driver.first.id
+  },
+  {
+  status: "complete",
+  date: Date.today - 24,
+  time_of_day: time_of_day_arr.sample,
+  rating: true,
+  feedback: feedback_arr.sample,
+  user_id: User.first.id,
+  driver_id: Driver.first.id
+  },
+  {
+  status: "complete",
+  date: Date.today - 28,
+  time_of_day: time_of_day_arr.sample,
+  rating: true,
+  feedback: feedback_arr.sample,
+  user_id: User.first.id,
+  driver_id: Driver.first.id
+  },
+  {
+  status: "complete",
+  date: Date.today - 32,
+  time_of_day: time_of_day_arr.sample,
+  rating: true,
+  feedback: feedback_arr.sample,
+  user_id: User.first.id,
+  driver_id: Driver.first.id
+  },
+  {
+  status: "complete",
+  date: Date.today - 36,
+  time_of_day: time_of_day_arr.sample,
+  rating: true,
+  feedback: feedback_arr.sample,
+  user_id: User.first.id,
+  driver_id: Driver.first.id
+  },
+  {
+  status: "complete",
+  date: Date.today - 38,
+  time_of_day: time_of_day_arr.sample,
+  rating: true,
+  feedback: feedback_arr.sample,
+  user_id: User.first.id,
+  driver_id: Driver.first.id
+  },
+  {
+  status: "complete",
   date: Date.today - 5,
   time_of_day: time_of_day_arr.sample,
   notes: "There might be some maintenance going on in the basement today.",
@@ -273,8 +336,8 @@ UserReward.create!(reward_id: Reward.find_by_name("One 1-day pass for Governors 
 
 UserReward.create!(reward_id: Reward.find_by_name("15% off Hamilton Tickets").id, user_id: User.first.id )
 
-Badge.first(5).each do |badge|
-  UserBadge.create!(user: User.first, badge: badge)
+Badge.where('points <= ?', User.first.lifetime_points).each do |badge|
+ UserBadge.create!(user: User.first, badge: badge)
 end
 
 

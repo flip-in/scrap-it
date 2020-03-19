@@ -54,6 +54,11 @@ class PickupsController < ApplicationController
     @pickup.status = 'complete'
     @pickup.user.save
     @pickup.save
+    Badge.where('points <= ?', current_user.lifetime_points).each do |badge|
+      unless current_user.badges.include?(badge)
+      UserBadge.create!(user: current_user, badge: badge)
+      end
+    end
     respond_to do |format|
         format.html { redirect_to driver_dashboard_path }
         format.js  # <-- will render `app/views/reviews/create.js.erb`

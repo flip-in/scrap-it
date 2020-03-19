@@ -23,14 +23,14 @@ class User < ApplicationRecord
   def generate_code
     self.qr_token = SecureRandom.hex
   end
-  
+
   def unavailable_dates
     pickups.pluck(:date)
   end
-  
+
   def up_next_badges
     user_badges = self.badges
-    upcoming_badges = Badge.all.select { |badge| badge.points >= self.lifetime_points}
+    upcoming_badges = Badge.all - user_badges
     upcoming_badges
   end
 
@@ -57,7 +57,7 @@ class User < ApplicationRecord
   end
 
   private
-  
+
   def check_badges
     # TODO write this code.. happens after the driver gives thumbs up or down
     user_badges = self.badges
