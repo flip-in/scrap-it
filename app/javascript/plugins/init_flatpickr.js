@@ -4,7 +4,7 @@ const pickDates = () => {
   
   // Check that the query selector id matches the one you put around your form.
   if (dateInput) {
-    const unavailableDates = JSON.parse(document.querySelector('#pickup-booking-dates').dataset.unavailable)
+    const unavailableDates = JSON.parse(document.querySelector('.pickup-booking-dates').dataset.unavailable)
 
   flatpickr(dateInput, {
     minDate: "today",
