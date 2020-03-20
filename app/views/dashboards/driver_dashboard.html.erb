@@ -10,6 +10,33 @@
   <span id="today-pickup-text">Your pickups for today:</span>
   <% if @pickups.any? %>
     <% @pickups.each do |pickup| %>
+      <% if pickup.notes %>
+        <div class="driver-pickup-with-note card mb-3">
+          <div class="pickup-details">
+            <div class="schedule-date ">
+              <h3><%= pickup.date.strftime("%e") %></h3>
+              <span><%= pickup.date.strftime("%m") %> - <%=pickup.date.strftime("%b").upcase %></span>
+            </div>
+            <div class="feedback user-details p-2">
+              <div class="user-name mx-1">
+                <%= pickup.user.first_name %>
+                <%= pickup.user.last_name %>
+              </div>
+              <div class="user-address mx-1"><%= pickup.user.address.truncate(35) %></div>
+            </div>
+          </div>
+          <div class="confirm-pickup-with-note mx-3">
+            <div class="user-notes"><%= pickup.notes %></div>
+              <% if pickup.status == 'pending' %>
+                <%= link_to "Confirm Pickup", pickup_path(pickup, pickup: {status: "confirmed"}), method: :patch, class: 'btn btn-primary' %>
+              <% else %>
+                <button class="btn btn-secondary">Confirmed</button>
+              <% end %>
+
+            </div>
+        </div>
+
+      <% else %>
         <div class="driver-current-pickups pr-2 w-100 d-flex justify-content-between align-items-center">
           <div class="card-date px-2">
             <span class="pickup-day"><%= pickup.date.strftime("%e") %></span>
@@ -22,6 +49,7 @@
               <%= pickup.user.last_name %>
             </div>
             <div class="user-address"><%= pickup.user.address.truncate(35) %></div>
+            
           </div>
 
           <div class="confirm-pickup">
@@ -34,7 +62,7 @@
           </div>
 
         </div> <!-- PICKUP-CARD div -->
-      <%# end %>
+      <% end %>
     <% end %>
   <% else %>
     <div class="card-schedule p-1 my-2 text-center d-flex align-items-center justify-content-center">
