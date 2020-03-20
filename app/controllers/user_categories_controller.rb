@@ -8,14 +8,18 @@ class UserCategoriesController < ApplicationController
     current_user.user_categories.destroy_all
     
     @categories_array = params[:categories_ids]
-    @categories_array.each do |id|
-      UserCategory.create(
-        category_id: id,
-        user: current_user
-      )
+    if @categories_array.nil?
+      render 'pages/onboarding'
+    else
+      @categories_array.each do |id|
+        UserCategory.create(
+          category_id: id,
+          user: current_user
+        )
     end
 
     redirect_to new_user_reward_path
+  end
 
     # Destroy all previous preferences
     # Create new preferences with the selected categories
