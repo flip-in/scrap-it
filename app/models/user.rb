@@ -3,13 +3,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :user_badges
-  has_many :user_rewards
-  has_many :user_categories
+  has_many :user_badges, dependent: :destroy
+  has_many :user_rewards, dependent: :destroy
+  has_many :user_categories, dependent: :destroy
   has_many :categories, through: :user_categories
   has_many :badges, through: :user_badges
   has_many :rewards, through: :user_rewards
-  has_many :pickups
+  has_many :pickups, dependent: :destroy
   after_update :check_badges
   validates :address, :first_name, :last_name, :phone_number, presence: true, on: :update
   geocoded_by :address
