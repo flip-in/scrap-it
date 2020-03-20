@@ -16,7 +16,11 @@ class DashboardsController < ApplicationController
     @rewards = @rewards.reject { |i| @user_rewards.include? i }
     # end
     @completed_pickups_number = current_user.pickups.where(status: "complete").count
-    @picked_up_kgs = @completed_pickups_number * 2
+    if @completed_pickups_number > 0
+      @pickuped_up_kgs = @completed_pickups_number * 2 + 3
+    else 
+      @pickuped_up_kgs = 0
+    end
     @completed_pickups_total = Pickup.where(status: "complete").count
     @diverted_total = @completed_pickups_total * 2
   end
