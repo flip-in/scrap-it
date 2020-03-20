@@ -16,7 +16,6 @@ class PagesController < ApplicationController
         lat: pickup.user.latitude,
         lng: pickup.user.longitude
       }
-      # raise
     end
     # map for driver
   end

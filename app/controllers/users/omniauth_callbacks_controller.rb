@@ -8,7 +8,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       @user = User.from_omniauth(request.env["omniauth.auth"])
       if @user.persisted?
         sign_in(@user)
-        # raise
         if @user.categories.empty?        
           redirect_to onboarding_path #this will throw if @user is not activated
           set_flash_message(:notice, :success, kind: "Facebook") if is_navigational_format?

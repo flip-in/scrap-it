@@ -1,6 +1,8 @@
 class UserCategory < ApplicationRecord
   belongs_to :category
   belongs_to :user
+
+  validates :category, presence: { message: "Choose 2"}
   # validates_length_of :categories_ids, :minimum => 5, :message => "blah blah blah"
 
   # private 
